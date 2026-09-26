@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./scene.css">
   <link rel="stylesheet" href="./pricing.css">
+  <link rel="stylesheet" href="./modules.css">
   <script src="./app.js" defer></script>
   <script src="./scene.js" defer></script>
+  <script src="./modules-data.js" defer></script>
 </head>
 <body>
   <!-- Preloader Screen -->
@@ -313,126 +315,48 @@
             </button>
           </div>
         </div>
+      </article>
 
-        <!-- Кнопка раскрытия спойлера сравнения и ограничений -->
-        <div class="free-features-action">
-          <button class="free-features-toggle" id="free-features-toggle" type="button" aria-expanded="false" aria-controls="free-features-collapse">
-            <span class="toggle-icon-wrap">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-            </span>
-            <span class="toggle-text">Что отличается от платной версии? Показать детальный список</span>
-          </button>
-        </div>
-
-        <!-- Раскрывающийся контент спойлера -->
-        <div class="free-features-collapse" id="free-features-collapse">
-          <div class="free-features-inner">
-            <div class="free-banner-highlight">
-              <div class="highlight-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-              </div>
-              <div class="highlight-text">
-                <strong>Бесплатная версия — это полноценный клиент, а не урезанное демо.</strong>
-                Вам доступны: плавный зум, свободная камера (FreeLook), физика падающих предметов (ItemPhysics), Name Protect, фирменный рубиновый GUI и регулярные обновления стабильности. Ниже перечислены модули и эффекты, эксклюзивные для платной подписки.
-              </div>
+      <!-- Полный каталог модулей мода (разница между Free и платной версией) -->
+      <section class="modules-catalog-section reveal" id="modules-catalog" aria-labelledby="modules-catalog-title">
+        <div class="modules-catalog-card">
+          <div class="modules-card-glow" aria-hidden="true"></div>
+          <header class="modules-catalog-header">
+            <span class="eyebrow">Каталог функционала и возможностей</span>
+            <h2 id="modules-catalog-title">Все модули мода на данный момент <span class="update-note">(список будет обновляться)</span></h2>
+            <div class="modules-legend-bar">
+              <span class="modules-legend-item">
+                <span class="status-badge-inline check">✓</span>
+                Присутствует и в платной, и в Free версии
+              </span>
+              <span class="modules-legend-item">
+                <span class="status-badge-inline cross">✕</span>
+                Отсутствует в Free версии (только в платной подписке)
+              </span>
+              <span class="modules-legend-note">
+                Нажмите на любой модуль, чтобы раскрыть подробное описание, доступные режимы и параметры настройки.
+              </span>
             </div>
+          </header>
 
-            <!-- Двухколоночная сетка эксклюзивов платной версии -->
-            <div class="free-excluded-grid">
-              
-              <!-- Колонка 1: Косметика и Эффекты -->
-              <div class="excluded-col">
-                <div class="excluded-box">
-                  <div class="excluded-box-header">
-                    <span class="box-icon ruby-icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"/><polygon points="2 15.5 12 22 22 15.5"/><polygon points="2 12 12 18.5 22 12"/></svg>
-                    </span>
-                    <div>
-                      <h4>Hit Particles (Эффекты ударов)</h4>
-                      <p>Эксклюзивные визуальные режимы частиц в платной версии</p>
-                    </div>
-                  </div>
-                  <div class="tags-container">
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Mixed</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Sparks</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Drops</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Crystals</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Cubes</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Petals</span>
-                  </div>
-                  <div class="box-note">В бесплатной версии: классические базовые частицы и стандартный сплэш.</div>
-                </div>
-
-                <div class="excluded-box">
-                  <div class="excluded-box-header">
-                    <span class="box-icon ruby-icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </span>
-                    <div>
-                      <h4>Target ESP (Отображение цели)</h4>
-                      <p>Премиум стили анимаций захвата цели</p>
-                    </div>
-                  </div>
-                  <div class="tags-container">
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Butterflies</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pentagram</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pentagram with Crystals</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Glass Orbit</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Marker</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Crystals</span>
-                    <span class="feature-tag locked"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Crown</span>
-                  </div>
-                  <div class="box-note">В бесплатной версии: базовое лаконичное выделение без сложных 3D-орбит.</div>
-                </div>
-              </div>
-
-              <!-- Колонка 2: Модули и Глубокая Оптимизация -->
-              <div class="excluded-col">
-                <div class="excluded-box">
-                  <div class="excluded-box-header">
-                    <span class="box-icon ruby-icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                    </span>
-                    <div>
-                      <h4>Дополнительные модули клиента</h4>
-                      <p>Утилиты и эффекты, доступные в платной версии</p>
-                    </div>
-                  </div>
-                  <div class="modules-list">
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Damage Numbers</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> AutoRespawn</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Hand Flame</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Tags</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Player ESP</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Lock Armor Notify</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Item Logger</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Lock Slot</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Chest Stealer</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Command Macros</div>
-                    <div class="module-item"><span class="mod-cross"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Skybox Tint</div>
-                  </div>
-                </div>
-
-                <div class="excluded-box opt-engine-box">
-                  <div class="excluded-box-header">
-                    <span class="box-icon neon-icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    </span>
-                    <div>
-                      <h4>Движок Оптимизации (Engine v2)</h4>
-                      <p>Разница в предельном потенциале FPS</p>
-                    </div>
-                  </div>
-                  <p class="opt-desc">
-                    В бесплатной версии используется надёжная оптимизация базового рендеринга. В платной — внедрён глубокий асинхронный пайплайн, дающий до <strong>~25% дополнительного прироста</strong> в тяжёлых сценах, замесах и на серверах с высоким онлайном.
-                  </p>
-                </div>
-              </div>
-
+          <div class="modules-toolbar">
+            <div class="modules-search-wrap">
+              <span class="modules-search-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
+              <input type="text" class="modules-search-input" id="modules-search-input" placeholder="Найти модуль по названию или описанию..." aria-label="Поиск по модулям">
+              <button type="button" class="modules-search-clear" id="modules-search-clear" aria-label="Очистить поиск">✕</button>
             </div>
+            <nav class="modules-categories" id="modules-categories-nav" aria-label="Фильтр по категориям модулей">
+              <!-- Рендерится через modules-data.js -->
+            </nav>
+          </div>
+
+          <div class="modules-catalog-grid" id="modules-catalog-container">
+            <!-- Рендерится через modules-data.js -->
           </div>
         </div>
-      </article>
+      </section>
 
       <!-- Баннер ежедневных наград на сайте -->
       <aside class="daily-reward-banner reveal" tabindex="0">

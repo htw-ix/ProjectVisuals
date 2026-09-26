@@ -41,20 +41,15 @@
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const stage = document.querySelector('.logo-stage');
-const hero = document.querySelector('.hero');
-if (!reducedMotion.matches && window.matchMedia('(pointer:fine)').matches && stage && hero) {
-  hero.addEventListener('pointermove', event => {
+if (!reducedMotion.matches && window.matchMedia('(pointer:fine)').matches && stage) {
+  stage.addEventListener('pointermove', event => {
     const rect = stage.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const dx = (event.clientX - centerX) / (window.innerWidth / 2);
-    const dy = (event.clientY - centerY) / (window.innerHeight / 2);
-    const clampX = Math.max(-1.1, Math.min(1.1, dx));
-    const clampY = Math.max(-1.1, Math.min(1.1, dy));
-    stage.style.setProperty('--ry', `${clampX * 18}deg`);
-    stage.style.setProperty('--rx', `${-clampY * 15}deg`);
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    stage.style.setProperty('--ry', `${x * 16}deg`);
+    stage.style.setProperty('--rx', `${-y * 14}deg`);
   });
-  hero.addEventListener('pointerleave', () => {
+  stage.addEventListener('pointerleave', () => {
     stage.style.setProperty('--rx', '0deg');
     stage.style.setProperty('--ry', '0deg');
   });
@@ -435,19 +430,3 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
-
-// Collapsible Free Features list
-const freeToggle = document.getElementById('free-features-toggle');
-const freeCollapse = document.getElementById('free-features-collapse');
-if (freeToggle && freeCollapse) {
-  freeToggle.addEventListener('click', () => {
-    const isOpen = freeCollapse.classList.toggle('is-open');
-    freeToggle.setAttribute('aria-expanded', String(isOpen));
-    const label = freeToggle.querySelector('.toggle-text');
-    if (label) {
-      label.textContent = isOpen 
-        ? 'Скрыть детальный список отличий' 
-        : 'Что отличается от платной версии? Показать детальный список';
-    }
-  });
-}
