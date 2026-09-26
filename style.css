@@ -178,7 +178,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   gap:10px;
 }
 
-.nav-tg-link{
+.nav-social-link{
   display:inline-flex;
   align-items:center;
   gap:6px;
@@ -191,16 +191,24 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   border-radius:8px;
   text-decoration:none;
 }
+.nav-social-link:hover{
+  color:#ffffff;
+  background:rgba(255,255,255,0.06);
+}
 .nav-tg-link svg{
   color:#29a9ea;
   transition:transform .25s var(--ease);
 }
-.nav-tg-link:hover{
-  color:#ffffff;
-  background:rgba(255,255,255,0.06);
-}
 .nav-tg-link:hover svg{
   transform:scale(1.15) rotate(-6deg);
+}
+.nav-tiktok-link svg{
+  color:#ff2452;
+  filter:drop-shadow(-1px -1px 0 #00f2fe);
+  transition:transform .25s var(--ease);
+}
+.nav-tiktok-link:hover svg{
+  transform:scale(1.15) rotate(6deg);
 }
 
 .nav-tg-btn{

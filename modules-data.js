@@ -19,11 +19,22 @@
     // 1. Боевые эффекты
     {
       id: 'hit-particles',
-      name: 'Hit Particles',
+      name: 'Hit Particles (Частицы удара)',
       category: 'Боевые эффекты',
       catId: 'combat',
-      free: true,
-      desc: 'Частицы удара: смешанные, искры, сердца, капли, деньги, звёзды, кристаллы, кубы и лепестки. Настраиваются количество, размер, скорость, гравитация, время жизни и палитра.'
+      free: 'partial',
+      desc: 'Кастомные частицы при нанесении урона цели с тонкой настройкой количества, размера, скорости, гравитации и палитры. В бесплатной версии доступен базовый набор: сердца, деньги, звёзды. В Pro версии открыты все эксклюзивные эффекты: смешанные, искры, капли, кристаллы, кубики и лепестки.',
+      options: [
+        { name: 'Сердца', free: true },
+        { name: 'Деньги', free: true },
+        { name: 'Звёзды', free: true },
+        { name: 'Смешанные', free: false },
+        { name: 'Искры', free: false },
+        { name: 'Капли', free: false },
+        { name: 'Кристаллы', free: false },
+        { name: 'Кубики', free: false },
+        { name: 'Лепестки', free: false }
+      ]
     },
     {
       id: 'hit-color',
@@ -35,19 +46,39 @@
     },
     {
       id: 'target-esp',
-      name: 'Target ESP',
+      name: 'Target ESP (Метка цели)',
       category: 'Боевые эффекты',
       catId: 'combat',
-      free: true,
-      desc: '17 вариантов: Ghosts, Ghosts V2, Scanner, Orbit, Helix, Crown, Bo, Jeka, Legacy, Marker, Vegas, Crystals, Butterflies, Pentagram, Liquid Crown, Crystal Sigil и Glass Orbit. Настройки Target ESP: размеры, количество элементов, вращение, следы, свечение, отдельный цвет ореола, покраснение при уроне, плавное появление и исчезновение после бездействия.'
+      free: 'partial',
+      desc: '17 вариантов визуального выделения цели: регулировка размеров, вращения, следов, свечения, ореола и затухания. В бесплатной версии доступно 10 классических стилей: Ghosts, Ghosts V2, Scanner, Orbit, Helix, Bo, Jeka, Legacy, Vegas, Liquid Crown, Crystal Sigil. В Pro версии эксклюзивно доступны: бабочки, пентаграмма, пентаграмма с кристаллами, стеклянная орбита, маркер, кристаллы и корона.',
+      options: [
+        { name: 'Ghosts', free: true },
+        { name: 'Ghosts V2', free: true },
+        { name: 'Scanner', free: true },
+        { name: 'Orbit', free: true },
+        { name: 'Helix', free: true },
+        { name: 'Bo', free: true },
+        { name: 'Jeka', free: true },
+        { name: 'Legacy', free: true },
+        { name: 'Vegas', free: true },
+        { name: 'Liquid Crown', free: true },
+        { name: 'Crystal Sigil', free: true },
+        { name: 'Бабочки', free: false },
+        { name: 'Пентаграмма', free: false },
+        { name: 'Пентаграмма с кристаллами', free: false },
+        { name: 'Стеклянная орбита', free: false },
+        { name: 'Маркер', free: false },
+        { name: 'Кристаллы', free: false },
+        { name: 'Корона', free: false }
+      ]
     },
     {
       id: 'combat-text',
-      name: 'Combat Text (Damage Numbers)',
+      name: 'Combat Text (Числа урона)',
       category: 'Боевые эффекты',
       catId: 'combat',
       free: false,
-      desc: 'Всплывающие числа наблюдаемой потери здоровья.'
+      desc: 'Всплывающие числа нанесённого и полученного урона с анимацией подъёма и затухания.'
     },
     {
       id: 'totem-pop-counter',
@@ -55,7 +86,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Подсчёт срабатываний тотемов.'
+      desc: 'Подсчёт срабатываний тотемов бессмертия у противников и союзников.'
     },
     {
       id: 'kill-bloom',
@@ -63,7 +94,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Эффект убийства: вспышка, луч вверх или вниз, ударная волна.'
+      desc: 'Эффект убийства: вспышка, луч вверх или вниз, кинематографичная ударная волна.'
     },
     {
       id: 'kill-spirit',
@@ -71,7 +102,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Прозрачный персонаж с крыльями; варианты Ascend, Spiral и Liquid, настройки высоты, длительности, прозрачности и частиц, предпросмотр.'
+      desc: 'Прозрачный персонаж с крыльями: варианты Ascend, Spiral и Liquid, настройки высоты, длительности, прозрачности и частиц, предпросмотр.'
     },
     {
       id: 'combat-sounds',
@@ -87,7 +118,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Локальный манекен: свой ник, здоровье, поглощение, бессмертие, отталкивание, запас тотемов, тренировочный урон, копирование брони и косметики, поворот к игроку и возрождение.'
+      desc: 'Локальный тренировочный манекен: свой ник, здоровье, поглощение, бессмертие, отталкивание, запас тотемов, тренировочный урон, копирование брони и косметики, поворот к игроку и возрождение.'
     },
     {
       id: 'friends',
@@ -95,7 +126,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Список друзей и запрет прямого удара по ним.'
+      desc: 'Список друзей и блокировка случайного удара по союзникам.'
     },
     {
       id: 'clickfriend',
@@ -103,7 +134,7 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: true,
-      desc: 'Добавление друга средней кнопкой мыши.'
+      desc: 'Быстрое добавление игрока в друзья кликом средней кнопки мыши.'
     },
     {
       id: 'autorespawn',
@@ -111,17 +142,26 @@
       category: 'Боевые эффекты',
       catId: 'combat',
       free: false,
-      desc: 'Автоматическое возрождение либо выход в главное меню после смерти.'
+      desc: 'Автоматическое возрождение персонажа либо быстрый выход в главное меню после гибели.'
     },
 
     // 2. Мир и визуальные эффекты
     {
       id: 'skybox',
-      name: 'Skybox & Dusk',
+      name: 'Skybox & Dusk (Скайбокс)',
       category: 'Мир и визуал',
       catId: 'world',
-      free: false,
-      desc: 'Skybox — Vanilla, Midnight, Dusk, Storm и Nebula. Dusk — палитры Rose Quartz, Glacier, Ember, Amethyst, Jade и Moonstone. Тонирование неба, насыщенность, яркость, вращение, управление солнцем и луной, отображение у горизонта.'
+      free: 'partial',
+      desc: 'Собственное небо и градиенты Dusk. В бесплатной версии доступны пресеты Vanilla, Midnight, палитры Dusk (Rose Quartz, Glacier, Ember, Amethyst, Jade, Moonstone), плавное вращение неба и управление солнцем/луной. В платной Pro версии эксклюзивно доступна функция тонирования неба (Skybox Tint), а также пресеты Storm и Nebula.',
+      options: [
+        { name: 'Пресет Vanilla', free: true },
+        { name: 'Пресет Midnight', free: true },
+        { name: 'Палитры Dusk (6 видов)', free: true },
+        { name: 'Вращение неба и светила', free: true },
+        { name: 'Тонирование неба (Skybox Tint)', free: false },
+        { name: 'Пресет Storm', free: false },
+        { name: 'Пресет Nebula', free: false }
+      ]
     },
     {
       id: 'atmosphere',
@@ -129,7 +169,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Изменение оттенка освещения, защита теней, тонирование искусственного света, отдельное влияние на интерфейс.'
+      desc: 'Изменение оттенка освещения мира, защита теней, тонирование искусственного света, отдельное влияние на интерфейс.'
     },
     {
       id: 'time-changer',
@@ -145,7 +185,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Цвет тумана, начало и конечная дальность.'
+      desc: 'Цвет тумана, дистанция начала и максимальная дальность.'
     },
     {
       id: 'fullbright',
@@ -153,7 +193,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Увеличение яркости мира.'
+      desc: 'Увеличение яркости освещения мира без необходимости пить зелья ночного зрения.'
     },
     {
       id: 'ambient-wisps',
@@ -161,7 +201,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Летающие огоньки или звёздочки с настройками количества, области появления и движения.'
+      desc: 'Летающие светящиеся огоньки или звёздочки в воздухе с настройками плотности, зоны появления и скорости.'
     },
     {
       id: 'jump-circles',
@@ -169,7 +209,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Расходящиеся круги при прыжке.'
+      desc: 'Красивые расходящиеся световые круги под ногами при совершении прыжка.'
     },
     {
       id: 'projectile-trails',
@@ -177,7 +217,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Световые следы стрел, жемчуга и снежков.'
+      desc: 'Световые неоновые следы за летящими стрелами, жемчугом Края, снежками и зельями.'
     },
     {
       id: 'trajectories',
@@ -185,7 +225,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Прогноз траектории лука и метательных предметов, отметка столкновения и выделение пересекаемой сущности.'
+      desc: 'Визуальный прогноз траектории лука и метательных снарядов, отметка точки падения и подсветка пересекаемой цели.'
     },
     {
       id: 'player-trail',
@@ -193,7 +233,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Световой хвост за игроком.'
+      desc: 'Плавный световой шлейф за персонажем при движении.'
     },
     {
       id: 'player-radiance',
@@ -201,15 +241,23 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Свечение вокруг силуэта игрока.'
+      desc: 'Мягкое свечение вокруг силуэта вашего персонажа.'
     },
     {
-      id: 'player-outline',
-      name: 'Player Outline',
+      id: 'tags',
+      name: 'Tags (Метки над игроками)',
       category: 'Мир и визуал',
       catId: 'world',
       free: false,
-      desc: 'Настраиваемая обводка видимых игроков.'
+      desc: 'Кастомные информационные метки над игроками и сущностями: дистанция, состояние брони, статус и здоровье.'
+    },
+    {
+      id: 'player-outline',
+      name: 'Player Outline (Обводка игроков)',
+      category: 'Мир и визуал',
+      catId: 'world',
+      free: false,
+      desc: 'Настраиваемая контурная обводка силуэтов видимых игроков с выбором толщины, цвета и пульсации.'
     },
     {
       id: 'visible-hitboxes',
@@ -217,7 +265,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: false,
-      desc: 'Хитбоксы видимых игроков, мобов или последней цели.'
+      desc: 'Подсветка хитбоксов видимых игроков, мобов или последней атакованной цели.'
     },
     {
       id: 'hitbox',
@@ -225,7 +273,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Оформление стандартных F3+B хитбоксов: обводка, заливка или оба варианта.'
+      desc: 'Оформление стандартных F3+B хитбоксов: кастомная обводка, полупрозрачная заливка или комбинированный вид.'
     },
     {
       id: 'item-physics',
@@ -233,7 +281,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Визуальная физика выпавших предметов.'
+      desc: 'Реалистичная физика лежащих и падающих на землю предметов.'
     },
     {
       id: 'item-labels',
@@ -241,7 +289,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Подписи видимых выпавших предметов до 64 блоков; количество, масштаб, фон и ограничение длины названия.'
+      desc: 'Аккуратные текстовые подписи выпавших предметов на расстоянии до 64 блоков: количество, масштаб, фон и лимит длины.'
     },
     {
       id: 'custom-xp',
@@ -249,7 +297,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Звёзды, сердца, капли или ромбы вместо обычных сфер опыта.'
+      desc: 'Звёзды, сердца, капли или ромбы вместо стандартных шариков опыта.'
     },
     {
       id: 'norender',
@@ -257,7 +305,7 @@
       category: 'Мир и визуал',
       catId: 'world',
       free: true,
-      desc: 'Скрытие скорборда, списка игроков, огня, дождя/снега, виньетки, портала, тыквы, стандартных значков эффектов и тряски камеры при уроне.'
+      desc: 'Отключение ненужных элементов: скорборд, список игроков, огонь на экране, дождь/снег, виньетка, портал, тыква, иконки эффектов и тряска камеры при ударе.'
     },
 
     // 3. HUD
@@ -267,7 +315,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Портрет цели, имя, здоровье, поглощение, расстояние и броня.'
+      desc: 'Стильный виджет цели: 3D-портрет, ник, полоса здоровья, поглощение, расстояние и надетая броня с прочностью.'
     },
     {
       id: 'armor-hud',
@@ -275,7 +323,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Броня, прочность и предупреждение об износе.'
+      desc: 'Отображение состояния экипировки, прочности каждого элемента и предупреждение об износе.'
     },
     {
       id: 'inventory-view',
@@ -283,7 +331,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Отображение содержимого своего инвентаря.'
+      desc: 'Компактное отображение содержимого своего инвентаря прямо на экране.'
     },
     {
       id: 'cooldowns',
@@ -291,7 +339,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Оставшееся время перезарядки предметов.'
+      desc: 'Таймеры и индикаторы перезарядки предметов (эндер-жемчуг, золотые яблоки, щит).'
     },
     {
       id: 'status-effects',
@@ -299,7 +347,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Активные эффекты, уровни и длительность.'
+      desc: 'Список активных эффектов зелий, их уровни, иконки и оставшаяся длительность.'
     },
     {
       id: 'keybinds',
@@ -307,7 +355,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Список назначенных биндов.'
+      desc: 'Виджет активных назначенных горячих клавиш на экране.'
     },
     {
       id: 'coordinates',
@@ -315,7 +363,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Отдельная панель координат и направления.'
+      desc: 'Минималистичная панель координат X, Y, Z, биома и направления взгляда.'
     },
     {
       id: 'glass-status-bar',
@@ -323,7 +371,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Верхняя капсула либо независимые панели: ник, сервер, логотип, FPS, пинг, часы, игровое время, координаты, оценка TPS и скорость движения.'
+      desc: 'Стеклянная капсула статуса либо независимые блоки: ник, сервер, FPS, пинг, время, координаты, оценка TPS и скорость.'
     },
     {
       id: 'custom-crosshair',
@@ -331,7 +379,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Точка, крест или динамический прицел с реакцией на удар.'
+      desc: 'Кастомный прицел: точка, круг, крестик или динамический прицел с откликом на удар.'
     },
     {
       id: 'charge-meter',
@@ -339,7 +387,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Индикатор восстановления атаки.'
+      desc: 'Индикатор восстановления готовности атаки оружием.'
     },
     {
       id: 'damage-veil',
@@ -347,7 +395,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Мягкая цветная вспышка по краям при получении урона.'
+      desc: 'Мягкая неоновая вспышка по периметру экрана при получении персонажем урона.'
     },
     {
       id: 'notifications',
@@ -355,7 +403,7 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Уведомления о тотемах, питье, еде и переключении модулей.'
+      desc: 'Плавные всплывающие уведомления о тотемах, зельях, еде и включении/выключении модулей.'
     },
     {
       id: 'lock-armor-notify',
@@ -363,15 +411,15 @@
       category: 'HUD',
       catId: 'hud',
       free: false,
-      desc: 'Предупреждение о низкой прочности брони.'
+      desc: 'Срочное всплывающее предупреждение при критически низкой прочности брони.'
     },
     {
       id: 'music',
-      name: 'Music',
+      name: 'Music Visualizer',
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Музыкальная панель и визуализаторы Bars, Wave, Orbit.'
+      desc: 'Музыкальная панель и анимированные визуализаторы Bars, Wave, Orbit при воспроизведении медиа.'
     },
     {
       id: 'fake-fps',
@@ -379,15 +427,15 @@
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Отображаемый случайный FPS из выбранного диапазона; реальную производительность не повышает.'
+      desc: 'Отображение кастомного случайного значения FPS из диапазона для красивых скриншотов.'
     },
     {
       id: 'hud-chat-editor',
-      name: 'Редактирование HUD через чат',
+      name: 'Редактор HUD через чат',
       category: 'HUD',
       catId: 'hud',
       free: true,
-      desc: 'Перемещение, масштабирование и скрытие поддерживаемых элементов.'
+      desc: 'Интерактивное перемещение, масштабирование и скрытие виджетов мышью при открытом чате.'
     },
 
     // 4. Камера, руки и управление
@@ -397,7 +445,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Независимое положение, глубина и размер обеих рук; перемещение мышью в чате.'
+      desc: 'Независимая настройка положения, глубины и масштаба обеих рук; перемещение прямо мышью.'
     },
     {
       id: 'hand-chams',
@@ -405,15 +453,15 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Материалы Liquid Glass, Light Bands, Aurora, Opal, Petrol и Mercury с настройками цвета и скорости.'
+      desc: 'Премиум-материалы рук: Liquid Glass, Light Bands, Aurora, Opal, Petrol и Mercury с палитрами и скоростью анимации.'
     },
     {
       id: 'hand-flames',
-      name: 'Hand Flames',
+      name: 'Hand Flames (Пламя рук)',
       category: 'Камера и руки',
       catId: 'camera',
       free: false,
-      desc: 'Пламя по силуэту рук и предмета, цвет и регулируемое свечение.'
+      desc: 'Магическое пламя по силуэту рук и предметов с кастомным оттенком и регулировкой свечения.'
     },
     {
       id: 'zoom',
@@ -421,7 +469,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Увеличение, колесо прокрутки, чувствительность, отдельная клавиша активации, режим удержания/переключения, редактор кривой перехода и опция масштабирования интерфейса.'
+      desc: 'Плавный зум с регулировкой колесом мыши, клавишей активации, кривой перехода и масштабированием интерфейса.'
     },
     {
       id: 'free-look',
@@ -429,7 +477,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Свободный обзор без изменения направления движения персонажа.'
+      desc: 'Свободный круговой обзор камерой от третьего лица без смены направления движения персонажа.'
     },
     {
       id: 'screen-ratio',
@@ -437,7 +485,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: '21:9, 16:9, 4:3, 16:10 и собственное соотношение сторон.'
+      desc: 'Принудительное соотношение сторон экрана: 21:9, 16:9, 4:3, 16:10 или произвольное кастомное.'
     },
     {
       id: 'auto-sprint',
@@ -445,7 +493,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Автоматический спринт при допустимых игровых условиях.'
+      desc: 'Автоматический бег при начале движения вперёд.'
     },
     {
       id: 'keybinds-config',
@@ -453,7 +501,7 @@
       category: 'Камера и руки',
       catId: 'camera',
       free: true,
-      desc: 'Бинды на клавиатуру и кнопки мыши, включая боковые; режимы удержания и переключения.'
+      desc: 'Назначение модулей на клавиатуру и кнопки мыши (включая боковые); режимы удержания и переключения.'
     },
 
     // 5. Инвентарь и утилиты
@@ -463,7 +511,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Предпросмотр содержимого шалкера.'
+      desc: 'Всплывающий предпросмотр содержимого шалкерового ящика при наведении в инвентаре.'
     },
     {
       id: 'lockslot',
@@ -471,7 +519,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
-      desc: 'Блокировка перемещения и выбрасывания выбранных слотов.'
+      desc: 'Блокировка случайного выбрасывания или перемещения важных предметов в выбранных слотах.'
     },
     {
       id: 'item-scroller',
@@ -479,7 +527,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Быстрый перенос предметов перетаскиванием и колесом.'
+      desc: 'Мгновенный перенос предметов перетаскиванием с зажатой клавишей и колесом мыши.'
     },
     {
       id: 'chest-sort',
@@ -487,23 +535,23 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Постепенная сортировка сундука, объединение совместимых неполных стаков и раскладка по группам.'
+      desc: 'Умная сортировка сундука, объединение неполных стаков и группировка по типам предметов.'
     },
     {
       id: 'chest-loot',
-      name: 'Chest Loot',
+      name: 'Chest Loot (Забирать из сундука)',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
-      desc: 'Последовательный перенос предметов из открытого сундука.'
+      desc: 'Автоматический последовательный быстрый перенос всех предметов из открытого сундука в инвентарь.'
     },
     {
       id: 'item-logger',
-      name: 'ItemLogger',
+      name: 'ItemLogger (Айтем логгер)',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
-      desc: 'Сообщения о подобранных предметах.'
+      desc: 'Текстовые уведомления в чате или HUD о каждом подобранном предмете и его количестве.'
     },
     {
       id: 'death-coords',
@@ -511,7 +559,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Координаты и метка последней смерти, настраиваемый текст сообщения.'
+      desc: 'Фиксация точных координат и временная метка точки последней гибели персонажа.'
     },
     {
       id: 'waypoints',
@@ -519,7 +567,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Метки по направлению курсора и заданным координатам.'
+      desc: 'Создание путевых точек по взгляду или координатам с отображением в игровом мире.'
     },
     {
       id: 'name-protect',
@@ -527,15 +575,15 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Локальная замена отображаемого ника; менеджер аккаунтов показывает реальные имена.'
+      desc: 'Локальная маскировка вашего никнейма в игре для стримов и записи видео.'
     },
     {
       id: 'command-macros',
-      name: 'Command Macros',
+      name: 'Command Macros (Макросы команд)',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
-      desc: 'Команды по бинду, заготовки и подстановка координат.'
+      desc: 'Быстрое выполнение чат-команд по нажатию бинда с поддержкой автоподстановки координат.'
     },
     {
       id: 'screenshot-clipboard',
@@ -543,7 +591,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Сохранение скриншота и копирование изображения в буфер обмена.'
+      desc: 'Создание скриншота с одновременным копированием готового изображения в буфер обмена.'
     },
     {
       id: 'chat-history',
@@ -551,7 +599,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Сохранение последних 100 отправленных строк чата между запусками.'
+      desc: 'Сохранение истории отправленных сообщений между перезапусками клиента.'
     },
 
     // 6. Косметика
@@ -561,15 +609,15 @@
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Отдельное окно с категориями, предпросмотром персонажа и вращением моделей.'
+      desc: 'Внутриигровой гардероб с 3D-предпросмотром персонажа и свободным вращением моделей.'
     },
     {
       id: 'back-cosmetics',
-      name: 'На спину',
+      name: 'Аксессуары на спину',
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Project Elytra, стеклянные крылья и коллекция импортированных 3D-аксессуаров.'
+      desc: 'Project Elytra, стеклянные светящиеся крылья и коллекция авторских 3D-моделей.'
     },
     {
       id: 'capes',
@@ -577,31 +625,31 @@
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Коллекция по подкатегориям, включая ez; скрытие исходного плаща аккаунта и переключаемая анимация ветра.'
+      desc: 'Большая коллекция стильных плащей, скрытие стандартного плаща и физическая анимация ткани.'
     },
     {
       id: 'head-cosmetics',
-      name: 'На голову',
+      name: 'Аксессуары на голову',
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Жидкая корона, Red Eyes, Creeper, Balaclava, Pink Pumpkin, Cone и Antlers. Настройки размера, положения, палитры, прозрачности, анимации и свечения у соответствующих аксессуаров. Настройки отверстий глаз и рта балаклавы.'
+      desc: 'Жидкая корона, Red Eyes, Creeper, Balaclava, Pink Pumpkin, Cone и Antlers с настройками размера, палитры и свечения.'
     },
     {
       id: 'weapons-cosmetics',
-      name: 'Оружие',
+      name: 'Скины оружия',
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Glass Sword и Crystal Sword. Общий цвет/градиент меча либо отдельные палитры для дерева, камня, железа, золота, алмаза и незерита.'
+      desc: 'Кастомные модели Glass Sword и Crystal Sword с индивидуальными градиентами для каждого материала.'
     },
     {
       id: 'combinations',
-      name: 'Комбинации',
+      name: 'Комбинации косметики',
       category: 'Косметика',
       catId: 'cosmetics',
       free: true,
-      desc: 'Одновременное использование плаща и аксессуаров на спину.'
+      desc: 'Одновременное комбинирование плащей, крыльев и головных уборов без визуальных конфликтов.'
     },
 
     // 7. Интерфейс, темы и профили
@@ -611,15 +659,15 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Две темы: Liquid и Matte.'
+      desc: 'Фирменные темы интерфейса: Liquid (глянцевое стекло) и Matte (глубокий матовый минимализм).'
     },
     {
       id: 'module-search',
-      name: 'Поиск по модулям',
+      name: 'Умный поиск по модулям',
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Поиск по модулям с альтернативными названиями и синонимами.'
+      desc: 'Быстрый поиск функций по русским и английским названиям, описанию и синонимам.'
     },
     {
       id: 'structure-customization',
@@ -627,7 +675,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Перестановка модулей, категорий и аккаунтов; отмена изменения порядка. Перемещение и изменение размеров окон, масштаб интерфейса, регулируемые разделители колонок.'
+      desc: 'Свободная перестановка модулей и категорий, регулировка разделителей колонок и масштаба интерфейса.'
     },
     {
       id: 'color-palette',
@@ -635,7 +683,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Палитра с предпросмотром, копированием и вставкой цвета. Отдельные палитры эффектов или синхронизация с темой.'
+      desc: 'Полнофункциональная цветовая палитра с HEX-кодами, пипеткой и сохранением избранных оттенков.'
     },
     {
       id: 'gradients-styles',
@@ -643,7 +691,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Статический цвет, радуга и градиенты: Silk, Aurora, Tide, Breathe, Petrol, Light Bands, Opal, Liquid Glass, Mercury. Настройки насыщенности, размытия, прозрачности, скруглений и анимаций.'
+      desc: 'Пресеты градиентов: Silk, Aurora, Tide, Breathe, Petrol, Light Bands, Opal, Liquid Glass, Mercury.'
     },
     {
       id: 'localization',
@@ -651,7 +699,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Русский и английский языки. Подтверждение сброса и удаления.'
+      desc: 'Полный профессиональный перевод интерфейса и настроек на русский и английский языки.'
     },
     {
       id: 'ui-sounds',
@@ -659,7 +707,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Настраиваемые звуки кликов и переключения модулей. Собственные click.ogg и totem.ogg.'
+      desc: 'Приятные звуковые отклики на клики, ползунки и переключатели с поддержкой своих audio-файлов.'
     },
     {
       id: 'profiles',
@@ -667,7 +715,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Профили: локальное сохранение, загрузка и импорт; параметры модулей, бинды, оформление, расположение окон и настройки установленных шейдерпаков.'
+      desc: 'Сохранение, экспорт и импорт неограниченного числа конфигов (для PvP, выживания, мини-игр).'
     },
     {
       id: 'f1-visibility',
@@ -675,7 +723,7 @@
       category: 'Интерфейс и темы',
       catId: 'gui',
       free: true,
-      desc: 'Выбор элементов, которые скрываются по клавише F1.'
+      desc: 'Тонкая настройка видимости элементов мода при включении режима F1.'
     },
 
     // 8. Стартовый экран и интеграции
@@ -685,7 +733,7 @@
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Собственный стартовый экран с обоями, датой, часами и свайпом. Панель одиночной игры, серверов, настроек, выхода и аккаунтов.'
+      desc: 'Кастомное главное меню игры с живыми обоями, часами, панелью серверов и плавными анимациями.'
     },
     {
       id: 'wallpaper-editor',
@@ -693,7 +741,7 @@
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Галерея, импорт PNG, тонирование и интенсивность. Часы SF Pro Bold/Medium/Regular, скругление цифр и движущееся цветное освещение. Изменяемый размер панели кнопок, матовый блюр и анимированные переходы.'
+      desc: 'Импорт собственных обоев PNG/JPG, матовый блюр, регулировка затемнения и стили часов SF Pro.'
     },
     {
       id: 'window-customization',
@@ -701,15 +749,15 @@
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Название окна Project Visuals и логотип мода вместо иконки игры.'
+      desc: 'Фирменный заголовок окна и логотип Project Visuals вместо стандартной иконки Java.'
     },
     {
       id: 'alt-accounts',
-      name: 'Alt Accounts',
+      name: 'Менеджер аккаунтов (Alts)',
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Офлайн-аккаунты, Microsoft-вход, поиск, фильтры и переключение аккаунтов вне мира.'
+      desc: 'Быстрое переключение между лицензионными и офлайн-аккаунтами без перезапуска игры.'
     },
     {
       id: 'viafabricplus',
@@ -717,25 +765,33 @@
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Встроенный ViaFabricPlus для прямого подключения к разным версиям серверов.'
+      desc: 'Прямое подключение к серверам любых версий Minecraft от 1.8 до самых новых.'
     },
     {
       id: 'shaders-catalog',
-      name: 'Каталог шейдерпаков',
+      name: 'Каталог шейдеров',
       category: 'Стартовый экран',
       catId: 'launcher',
       free: true,
-      desc: 'Загрузка с Modrinth, применение через Iris, группировка параметров и управление освещением поддерживаемых паков.'
+      desc: 'Удобная загрузка и переключение шейдерпаков Iris с настройкой профилей качества.'
     },
 
     // 9. Производительность
     {
       id: 'optimization',
-      name: 'Optimization',
+      name: 'Optimization (Оптимизация)',
       category: 'Производительность',
       catId: 'performance',
-      free: true,
-      desc: 'Настраиваемое ограничение дальности, облаков, частиц, теней сущностей, смешивания биомов и других графических параметров. Отсечение скрытых сущностей. Модуль оптимизирует сам Minecraft.'
+      free: 'partial',
+      desc: 'Глубокая оптимизация работы самого Minecraft: отсечение невидимой геометрии и сущностей, умный менеджмент частиц, регулировка дальности прорисовки и графических нагрузок. В бесплатной версии доступна базовая оптимизация, а в платной Pro версии модуль работает на 25% эффективнее за счёт расширенных эвристик рендеринга и агрессивного отсечения.',
+      options: [
+        { name: 'Базовая оптимизация Minecraft', free: true },
+        { name: 'Отсечение скрытых сущностей', free: true },
+        { name: 'Регулировка частиц и теней', free: true },
+        { name: 'Управление дальностью и облаками', free: true },
+        { name: 'Продвинутый буст (+25% эффективности)', free: false },
+        { name: 'Глубокое агрессивное отсечение кадра', free: false }
+      ]
     },
     {
       id: 'fps-reduce',
@@ -743,7 +799,7 @@
       category: 'Производительность',
       catId: 'performance',
       free: true,
-      desc: 'Уменьшение FPS и громкости при AFK, сворачивании или потере фокуса.'
+      desc: 'Снижение нагрузки на видеокарту и процессор при свёрнутом окне или AFK.'
     },
     {
       id: 'cache-calc',
@@ -751,7 +807,7 @@
       category: 'Производительность',
       catId: 'performance',
       free: true,
-      desc: 'Ограничение количества эффектов, кэширование и повторное использование расчётов.'
+      desc: 'Оптимизация математических вычислений визуальных эффектов и анимаций.'
     }
   ];
 
@@ -761,14 +817,98 @@
   const searchClear = document.getElementById('modules-search-clear');
   const categoriesNav = document.getElementById('modules-categories-nav');
   const countBadge = document.getElementById('modules-total-count');
+  const catalogToggleBtn = document.getElementById('modules-catalog-toggle-btn');
+  const catalogCollapsible = document.getElementById('modules-catalog-collapsible');
+  const bottomCollapseBtn = document.getElementById('modules-bottom-collapse-btn');
+  const colsGroup = document.getElementById('modules-cols-group');
+  const floatingTopBtn = document.getElementById('modules-floating-top-btn');
+  const modulesSection = document.getElementById('modules-catalog');
 
   if (!container) return;
 
   let activeCategory = 'all';
   let searchQuery = '';
+  let isCatalogExpanded = false;
 
+  const totalModulesCount = MODULES_DATA.length;
   if (countBadge) {
-    countBadge.textContent = `${MODULES_DATA.length}`;
+    countBadge.textContent = `${totalModulesCount}`;
+  }
+
+  // Update Toggle Button Text and State
+  function updateToggleBtnState(expanded) {
+    isCatalogExpanded = expanded;
+    if (!catalogToggleBtn) return;
+    
+    catalogToggleBtn.setAttribute('aria-expanded', String(expanded));
+    
+    if (expanded) {
+      catalogCollapsible.classList.add('is-open');
+      catalogToggleBtn.innerHTML = `
+        <span class="toggle-btn-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+        <span class="toggle-btn-text">Свернуть каталог модулей</span>
+      `;
+    } else {
+      catalogCollapsible.classList.remove('is-open');
+      catalogToggleBtn.innerHTML = `
+        <span class="toggle-btn-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+        <span class="toggle-btn-text">Развернуть каталог модулей (${totalModulesCount})</span>
+      `;
+    }
+  }
+
+  // Wire Catalog Toggle Button
+  if (catalogToggleBtn && catalogCollapsible) {
+    catalogToggleBtn.addEventListener('click', () => {
+      updateToggleBtnState(!isCatalogExpanded);
+    });
+  }
+
+  // Wire Bottom Collapse Button
+  if (bottomCollapseBtn && catalogCollapsible) {
+    bottomCollapseBtn.addEventListener('click', () => {
+      updateToggleBtnState(false);
+      if (modulesSection) {
+        modulesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Wire Column Switcher Buttons (2, 3, 4 cols)
+  if (colsGroup) {
+    colsGroup.querySelectorAll('.col-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        colsGroup.querySelectorAll('.col-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const cols = btn.dataset.cols || '2';
+        container.className = `modules-catalog-grid cols-${cols}`;
+      });
+    });
+  }
+
+  // Floating Back to Top Button Visibility and Action
+  if (floatingTopBtn && modulesSection) {
+    window.addEventListener('scroll', () => {
+      if (!isCatalogExpanded) {
+        floatingTopBtn.classList.remove('is-visible');
+        return;
+      }
+      const rect = modulesSection.getBoundingClientRect();
+      // Show when scrolled at least 260px down into the catalog section, and still before reaching the very end
+      if (rect.top < -260 && rect.bottom > 250) {
+        floatingTopBtn.classList.add('is-visible');
+      } else {
+        floatingTopBtn.classList.remove('is-visible');
+      }
+    }, { passive: true });
+
+    floatingTopBtn.addEventListener('click', () => {
+      modulesSection.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 
   // Render Category Tabs
@@ -805,8 +945,16 @@
     const q = searchQuery.trim().toLowerCase();
     const filtered = MODULES_DATA.filter(m => {
       const matchCat = activeCategory === 'all' || m.catId === activeCategory;
-      const matchSearch = !q || m.name.toLowerCase().includes(q) || m.desc.toLowerCase().includes(q) || m.category.toLowerCase().includes(q);
-      return matchCat && matchSearch;
+      if (!matchCat) return false;
+      if (!q) return true;
+
+      // Full Live Search: matches module name, description, category, and any sub-options
+      const inName = m.name.toLowerCase().includes(q);
+      const inDesc = m.desc.toLowerCase().includes(q);
+      const inCat = m.category.toLowerCase().includes(q);
+      const inOptions = Array.isArray(m.options) && m.options.some(opt => opt.name.toLowerCase().includes(q));
+
+      return inName || inDesc || inCat || inOptions;
     });
 
     if (filtered.length === 0) {
@@ -823,13 +971,45 @@
       card.className = 'module-card';
       card.id = `mod-${module.id}`;
 
-      const iconClass = module.free ? 'free-yes' : 'free-no';
-      const iconSymbol = module.free ? '✓' : '✕';
-      const editionText = module.free ? 'Free + Pro' : 'Только в Pro';
-      const noticeText = module.free 
-        ? '✓ Присутствует и в бесплатной, и в платной версии' 
-        : '✕ Отсутствует в Free версии (доступно в платной подписке)';
-      const noticeClass = module.free ? 'notice-check' : 'notice-cross';
+      let iconClass = 'free-yes';
+      let iconSymbol = '✓';
+      let editionText = 'Free + Pro';
+      let noticeText = '✓ Присутствует и в бесплатной, и в платной версии';
+      let noticeClass = 'notice-check';
+
+      if (module.free === 'partial') {
+        iconClass = 'free-partial';
+        iconSymbol = '~';
+        editionText = 'Базовый в Free';
+        noticeText = '~ Базовый пул доступен в Free, расширенный функционал — в Pro';
+        noticeClass = 'notice-partial';
+      } else if (module.free === false) {
+        iconClass = 'free-no';
+        iconSymbol = '✕';
+        editionText = 'Только Pro';
+        noticeText = '✕ Отсутствует в Free версии (доступно только по подписке)';
+        noticeClass = 'notice-cross';
+      }
+
+      // Generate Options Tags Markup if breakdown is provided
+      let optionsMarkup = '';
+      if (Array.isArray(module.options) && module.options.length > 0) {
+        const tags = module.options.map(opt => {
+          const tagClass = opt.free ? 'yes' : 'no';
+          const sym = opt.free ? '✓' : '✕';
+          const proSuffix = opt.free ? '' : ' (Pro)';
+          return `<span class="opt-tag ${tagClass}">${sym} ${opt.name}${proSuffix}</span>`;
+        }).join('');
+
+        optionsMarkup = `
+          <div class="module-options-breakdown">
+            <div class="options-heading">Состав режимов и вариаций:</div>
+            <div class="options-tags-grid">
+              ${tags}
+            </div>
+          </div>
+        `;
+      }
 
       card.innerHTML = `
         <button class="module-card-trigger" type="button" aria-expanded="false" aria-controls="drawer-${module.id}">
@@ -851,6 +1031,7 @@
           <div class="module-drawer-inner">
             <div class="module-drawer-content">
               <p class="module-desc">${module.desc}</p>
+              ${optionsMarkup}
               <div class="module-edition-notice ${noticeClass}">
                 ${noticeText}
               </div>

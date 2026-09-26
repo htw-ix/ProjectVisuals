@@ -1,10 +1,9 @@
-/* Project Visuals: Modules Catalog & Feature Comparison Styling */
+/* Project Visuals: Modules Catalog & Interactive Directory */
 
 .modules-catalog-section {
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 24px;
   position: relative;
-  contain: paint;
 }
 
 .modules-catalog-card {
@@ -12,7 +11,7 @@
   background: radial-gradient(ellipse at 85% 15%, rgba(241, 37, 67, 0.12) 0%, transparent 60%), linear-gradient(150deg, #141218, #0a090d);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 32px;
-  padding: 44px 48px;
+  padding: 40px 44px;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
@@ -29,9 +28,8 @@
 }
 
 .modules-catalog-header {
-  margin-bottom: 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 28px;
+  padding-bottom: 24px;
 }
 
 .modules-catalog-header .eyebrow {
@@ -42,21 +40,21 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #ff6882;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .modules-catalog-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(26px, 3.4vw, 42px);
-  line-height: 1.15;
-  letter-spacing: -1.2px;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.18;
+  letter-spacing: -1px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .modules-catalog-header h2 span.update-note {
-  font-size: clamp(14px, 1.8vw, 20px);
+  font-size: clamp(13px, 1.6vw, 18px);
   font-weight: 500;
   color: #9c94a2;
   letter-spacing: -0.2px;
@@ -67,25 +65,25 @@
 .modules-legend-bar {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .modules-legend-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 12.5px;
   color: #c9c2ce;
   font-weight: 500;
 }
 
 .modules-legend-note {
-  font-size: 12.5px;
+  font-size: 12px;
   color: #8c8392;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .status-badge-inline {
@@ -107,6 +105,13 @@
   box-shadow: 0 0 12px rgba(38, 224, 125, 0.2);
 }
 
+.status-badge-inline.partial {
+  background: rgba(255, 175, 40, 0.16);
+  border: 1px solid rgba(255, 175, 40, 0.35);
+  color: #ffb834;
+  box-shadow: 0 0 12px rgba(255, 175, 40, 0.2);
+}
+
 .status-badge-inline.cross {
   background: rgba(241, 37, 67, 0.16);
   border: 1px solid rgba(241, 37, 67, 0.35);
@@ -114,18 +119,90 @@
   box-shadow: 0 0 12px rgba(241, 37, 67, 0.2);
 }
 
-/* Toolbar: Search and Filter Tabs */
+/* Main Catalog Collapsible Toggle Button */
+.modules-collapse-trigger-wrap {
+  margin-top: 20px;
+}
+
+.modules-catalog-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 28px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, rgba(241, 37, 67, 0.22), rgba(241, 37, 67, 0.08));
+  border: 1px solid rgba(241, 37, 67, 0.45);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(241, 37, 67, 0.2);
+  transition: all 0.3s var(--ease);
+}
+
+.modules-catalog-toggle-btn:hover {
+  background: linear-gradient(135deg, rgba(241, 37, 67, 0.35), rgba(241, 37, 67, 0.15));
+  border-color: #ff6882;
+  box-shadow: 0 6px 28px rgba(241, 37, 67, 0.35);
+  transform: translateY(-2px);
+}
+
+.toggle-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(241, 37, 67, 0.3);
+  color: #fff;
+  transition: transform 0.35s var(--ease);
+}
+
+.modules-catalog-toggle-btn[aria-expanded="true"] .toggle-btn-icon {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Accordion Drawer for Catalog Body */
+.modules-catalog-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modules-catalog-collapsible.is-open {
+  grid-template-rows: 1fr;
+}
+
+.modules-collapsible-inner {
+  overflow: hidden;
+}
+
+/* Toolbar: Search, Columns Selector, Filter Tabs */
 .modules-toolbar {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-top: 26px;
+  margin-bottom: 24px;
+}
+
+.modules-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .modules-search-wrap {
   position: relative;
-  max-width: 520px;
-  width: 100%;
+  max-width: 460px;
+  flex: 1;
+  min-width: 240px;
 }
 
 .modules-search-icon {
@@ -140,8 +217,8 @@
 
 .modules-search-input {
   width: 100%;
-  min-height: 48px;
-  padding: 0 46px 0 48px;
+  min-height: 46px;
+  padding: 0 44px 0 46px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 99px;
@@ -176,6 +253,59 @@
   display: block;
 }
 
+/* View Column Switcher (до 4 колонок) */
+.modules-view-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.view-cols-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  color: #8f8796;
+}
+
+.view-cols-group {
+  display: flex;
+  gap: 4px;
+}
+
+.col-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: none;
+  color: #a49da8;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s var(--ease);
+}
+
+.col-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.col-btn.is-active {
+  background: rgba(241, 37, 67, 0.25);
+  border-color: rgba(241, 37, 67, 0.55);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(241, 37, 67, 0.3);
+}
+
+/* Category Filter Tabs */
 .modules-categories {
   display: flex;
   gap: 8px;
@@ -186,7 +316,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 99px;
-  padding: 8px 16px;
+  padding: 7px 15px;
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 600;
@@ -220,19 +350,33 @@
   border-radius: 99px;
 }
 
-/* Modules Catalog Grid */
+/* Modules Catalog Grid - ALIGN-ITEMS: START PREVENTS HORIZONTAL NEIGHBOR STRETCHING! */
 .modules-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  align-items: start; /* CRITICAL FIX: prevents neighbor card from stretching when an accordion opens! */
   gap: 14px;
 }
 
+.modules-catalog-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modules-catalog-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.modules-catalog-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Module Card */
 .module-card {
   background: rgba(18, 15, 22, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
   overflow: hidden;
+  align-self: start; /* Individual isolation */
 }
 
 .module-card:hover {
@@ -241,9 +385,9 @@
 }
 
 .module-card.is-open {
-  border-color: rgba(241, 37, 67, 0.45);
-  background: rgba(22, 18, 27, 0.9);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(241, 37, 67, 0.12);
+  border-color: rgba(241, 37, 67, 0.5);
+  background: rgba(22, 18, 27, 0.95);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(241, 37, 67, 0.15);
 }
 
 .module-card-trigger {
@@ -252,7 +396,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 20px;
+  padding: 15px 18px;
   background: none;
   border: none;
   text-align: left;
@@ -286,6 +430,12 @@
   color: #26e07d;
 }
 
+.module-status-icon.free-partial {
+  background: rgba(255, 175, 40, 0.14);
+  border: 1px solid rgba(255, 175, 40, 0.35);
+  color: #ffb834;
+}
+
 .module-status-icon.free-no {
   background: rgba(241, 37, 67, 0.14);
   border: 1px solid rgba(241, 37, 67, 0.35);
@@ -298,7 +448,7 @@
 
 .module-name {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.2px;
@@ -309,7 +459,7 @@
 }
 
 .module-category-tag {
-  font-size: 10px;
+  font-size: 9.5px;
   color: #8c8392;
   margin-top: 1px;
 }
@@ -317,24 +467,31 @@
 .module-trigger-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .module-edition-label {
   font-family: var(--font-display);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 3px 9px;
+  letter-spacing: 0.6px;
+  padding: 3px 8px;
   border-radius: 6px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .module-edition-label.free-yes {
   background: rgba(38, 224, 125, 0.1);
   border: 1px solid rgba(38, 224, 125, 0.25);
   color: #4ee695;
+}
+
+.module-edition-label.free-partial {
+  background: rgba(255, 175, 40, 0.1);
+  border: 1px solid rgba(255, 175, 40, 0.25);
+  color: #ffc44d;
 }
 
 .module-edition-label.free-no {
@@ -370,21 +527,63 @@
 }
 
 .module-drawer-content {
-  padding: 0 20px 20px;
+  padding: 0 18px 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  margin-top: 4px;
-  padding-top: 14px;
+  margin-top: 2px;
+  padding-top: 12px;
 }
 
 .module-desc {
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 12.5px;
+  line-height: 1.6;
   color: #cdc5d2;
   margin: 0;
 }
 
-.module-desc strong {
-  color: #ffffff;
+/* Detailed Options Sub-List (for 50/50 and detailed modules) */
+.module-options-breakdown {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.options-heading {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #e2d8e4;
+  margin-bottom: 8px;
+}
+
+.options-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.opt-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.opt-tag.yes {
+  background: rgba(38, 224, 125, 0.1);
+  border: 1px solid rgba(38, 224, 125, 0.28);
+  color: #4ee695;
+}
+
+.opt-tag.no {
+  background: rgba(241, 37, 67, 0.1);
+  border: 1px solid rgba(241, 37, 67, 0.28);
+  color: #ff8598;
 }
 
 .module-edition-notice {
@@ -404,13 +603,100 @@
   color: #ff8ca0;
 }
 
+.module-edition-notice.notice-partial {
+  background: rgba(255, 175, 40, 0.08);
+  border: 1px solid rgba(255, 175, 40, 0.25);
+  color: #ffc44d;
+}
+
 .module-edition-notice.notice-check {
   background: rgba(38, 224, 125, 0.08);
   border: 1px solid rgba(38, 224, 125, 0.25);
   color: #68edab;
 }
 
-/* Empty search state */
+/* Bottom Collapse Action */
+.modules-bottom-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.modules-bottom-collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c9c2ce;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+
+.modules-bottom-collapse-btn:hover {
+  background: rgba(241, 37, 67, 0.15);
+  border-color: rgba(241, 37, 67, 0.45);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Floating "Back to Top of Catalog" Button */
+.modules-floating-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 95;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 99px;
+  background: rgba(18, 15, 22, 0.9);
+  border: 1px solid rgba(241, 37, 67, 0.45);
+  backdrop-filter: blur(14px);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(241, 37, 67, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background 0.2s, border-color 0.2s;
+}
+
+.modules-floating-top-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.modules-floating-top-btn:hover {
+  background: rgba(241, 37, 67, 0.25);
+  border-color: #ff6882;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(241, 37, 67, 0.4);
+  transform: translateY(-2px);
+}
+
+.modules-floating-top-btn svg {
+  color: #ff6882;
+  transition: transform 0.2s;
+}
+
+.modules-floating-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Empty state */
 .modules-empty-state {
   grid-column: 1 / -1;
   text-align: center;
@@ -419,14 +705,24 @@
   font-size: 14px;
 }
 
-/* Responsive */
+/* Responsive Grid Adapters */
+@media (max-width: 1200px) {
+  .modules-catalog-grid.cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .modules-catalog-card {
-    padding: 32px 28px;
+    padding: 30px 24px;
     border-radius: 26px;
   }
-  .modules-catalog-grid {
-    grid-template-columns: 1fr;
+  .modules-catalog-grid.cols-3,
+  .modules-catalog-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .modules-view-controls {
+    display: none; /* Hide 3-4 cols switcher on tablet/mobile where 2 is max */
   }
 }
 
@@ -436,7 +732,7 @@
     border-radius: 20px;
   }
   .modules-catalog-header h2 {
-    font-size: 22px;
+    font-size: 21px;
   }
   .modules-catalog-header h2 span.update-note {
     display: block;
@@ -444,10 +740,17 @@
     margin-top: 4px;
     font-size: 13px;
   }
-  .modules-legend-bar {
-    gap: 12px;
+  .modules-catalog-grid.cols-2,
+  .modules-catalog-grid.cols-3,
+  .modules-catalog-grid.cols-4 {
+    grid-template-columns: 1fr;
   }
-  .module-edition-label {
+  .modules-floating-top-btn span {
     display: none;
+  }
+  .modules-floating-top-btn {
+    padding: 12px;
+    right: 18px;
+    bottom: 18px;
   }
 }

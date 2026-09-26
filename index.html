@@ -47,7 +47,13 @@
         <a href="#features">Возможности</a>
         <a href="#preview">Интерфейс</a>
         <a href="#pricing">Тарифы</a>
-        <a class="nav-tg-link" href="https://t.me/projectvisuals" target="_blank" rel="noopener" aria-label="Telegram канал Project Visuals">
+        <a class="nav-social-link nav-tiktok-link" href="https://www.tiktok.com/@project_visuals/video/7686128334589283605" target="_blank" rel="noopener" aria-label="TikTok Project Visuals">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.35a6.34 6.34 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.61a6.34 6.34 0 0 0 9.07 5.68 6.27 6.27 0 0 0 3.28-5.5V8.69a8.18 8.18 0 0 0 4.24 1.25V6.69z"/>
+          </svg>
+          <span>TikTok ↗</span>
+        </a>
+        <a class="nav-social-link nav-tg-link" href="https://t.me/projectvisuals" target="_blank" rel="noopener" aria-label="Telegram канал Project Visuals">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
           <span>Telegram ↗</span>
         </a>
@@ -317,17 +323,21 @@
         </div>
       </article>
 
-      <!-- Полный каталог модулей мода (разница между Free и платной версией) -->
+      <!-- Полный каталог модулей клиента (разница между Free и платной версией) -->
       <section class="modules-catalog-section reveal" id="modules-catalog" aria-labelledby="modules-catalog-title">
         <div class="modules-catalog-card">
           <div class="modules-card-glow" aria-hidden="true"></div>
           <header class="modules-catalog-header">
             <span class="eyebrow">Каталог функционала и возможностей</span>
-            <h2 id="modules-catalog-title">Все модули мода на данный момент <span class="update-note">(список будет обновляться)</span></h2>
+            <h2 id="modules-catalog-title">Все модули клиента на данный момент <span class="update-note">(список будет обновляться)</span></h2>
             <div class="modules-legend-bar">
               <span class="modules-legend-item">
                 <span class="status-badge-inline check">✓</span>
                 Присутствует и в платной, и в Free версии
+              </span>
+              <span class="modules-legend-item">
+                <span class="status-badge-inline partial">~</span>
+                Базовый пул в Free (расширенные режимы в платной)
               </span>
               <span class="modules-legend-item">
                 <span class="status-badge-inline cross">✕</span>
@@ -337,25 +347,66 @@
                 Нажмите на любой модуль, чтобы раскрыть подробное описание, доступные режимы и параметры настройки.
               </span>
             </div>
+
+            <!-- Главная кнопка раскрытия/сворачивания каталога -->
+            <div class="modules-collapse-trigger-wrap">
+              <button class="modules-catalog-toggle-btn" id="modules-catalog-toggle-btn" type="button" aria-expanded="false" aria-controls="modules-catalog-collapsible">
+                <span class="toggle-btn-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+                <span class="toggle-btn-text">Развернуть каталог модулей (<span id="modules-total-count">...</span>)</span>
+              </button>
+            </div>
           </header>
 
-          <div class="modules-toolbar">
-            <div class="modules-search-wrap">
-              <span class="modules-search-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              </span>
-              <input type="text" class="modules-search-input" id="modules-search-input" placeholder="Найти модуль по названию или описанию..." aria-label="Поиск по модулям">
-              <button type="button" class="modules-search-clear" id="modules-search-clear" aria-label="Очистить поиск">✕</button>
-            </div>
-            <nav class="modules-categories" id="modules-categories-nav" aria-label="Фильтр по категориям модулей">
-              <!-- Рендерится через modules-data.js -->
-            </nav>
-          </div>
+          <!-- Раскрывающееся тело каталога -->
+          <div class="modules-catalog-collapsible" id="modules-catalog-collapsible">
+            <div class="modules-collapsible-inner">
+              <div class="modules-toolbar">
+                <div class="modules-toolbar-row">
+                  <div class="modules-search-wrap">
+                    <span class="modules-search-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </span>
+                    <input type="text" class="modules-search-input" id="modules-search-input" placeholder="Поиск по названию или описанию..." aria-label="Поиск по модулям">
+                    <button type="button" class="modules-search-clear" id="modules-search-clear" aria-label="Очистить поиск">✕</button>
+                  </div>
 
-          <div class="modules-catalog-grid" id="modules-catalog-container">
-            <!-- Рендерится через modules-data.js -->
+                  <!-- Переключатель количества столбцов (до 4 колонок) -->
+                  <div class="modules-view-controls">
+                    <span class="view-cols-label">Столбцы:</span>
+                    <div class="view-cols-group" id="modules-cols-group">
+                      <button type="button" class="col-btn is-active" data-cols="2" title="2 колонки">2</button>
+                      <button type="button" class="col-btn" data-cols="3" title="3 колонки">3</button>
+                      <button type="button" class="col-btn" data-cols="4" title="4 колонки">4</button>
+                    </div>
+                  </div>
+                </div>
+
+                <nav class="modules-categories" id="modules-categories-nav" aria-label="Фильтр по категориям модулей">
+                  <!-- Рендерится через modules-data.js -->
+                </nav>
+              </div>
+
+              <div class="modules-catalog-grid cols-2" id="modules-catalog-container">
+                <!-- Рендерится через modules-data.js -->
+              </div>
+
+              <!-- Кнопка быстрого сворачивания внизу -->
+              <div class="modules-bottom-action">
+                <button class="modules-bottom-collapse-btn" id="modules-bottom-collapse-btn" type="button">
+                  <span>Свернуть каталог модулей</span> <span aria-hidden="true">↑</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Плавающая кнопка возврата к началу каталога -->
+        <button class="modules-floating-top-btn" id="modules-floating-top-btn" type="button" aria-label="Вернуться к началу каталога модулей">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+          <span>К началу каталога</span>
+        </button>
       </section>
 
       <!-- Баннер ежедневных наград на сайте -->
