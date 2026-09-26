@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Visuals</title>
+  <meta name="description" content="Project Visuals — полноценный клиент-лаунчер нового поколения. Только визуальное преображение Minecraft, чистый интерфейс, EULA-совместимость и открытый Beta-Test.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="icon" type="image/webp" href="./assets/project-visuals-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./scene.css">
+  <link rel="stylesheet" href="./pricing.css">
+  <script src="./app.js" defer></script>
+  <script src="./scene.js" defer></script>
+</head>
+<body>
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-bg"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <div class="preloader-aura"></div>
+        <img class="preloader-logo" src="./assets/project-visuals-logo.webp" alt="Project Visuals" width="120" height="120">
+      </div>
+      <div class="preloader-title">Project <span>Visuals</span></div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <div class="preloader-status" id="preloader-status">Инициализация интерфейса...</div>
+    </div>
+  </div>
+
+  <div class="ambient-particles" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">К содержимому</a>
+  
+  <header class="header">
+    <nav class="nav shell" aria-label="Основная навигация">
+      <a class="brand" href="#home" aria-label="Project Visuals — главная">
+        <img src="./assets/project-visuals-logo.webp" width="40" height="40" alt="">
+        <span>Project<span class="brand-light">Visuals</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Возможности</a>
+        <a href="#preview">Интерфейс</a>
+        <a href="#pricing">Тарифы</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button button-small nav-tg-btn" href="https://t.me/projectvisuals" target="_blank" rel="noopener" aria-label="Telegram канал Project Visuals">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <!-- Кнопка авторизации для подключения бэкенда -->
+        <button class="button button-small nav-auth-btn" id="open-auth-btn" type="button" aria-haspopup="dialog" aria-label="Войти в личный кабинет">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span id="nav-auth-label">Войти</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <div class="curtain-glow"></div>
+        <div class="curtain-rays rays-one"></div>
+        <div class="curtain-rays rays-two"></div>
+        <div class="curtain-shadows"></div>
+      </div>
+      <div class="hero-content shell">
+        <div class="logo-stage" tabindex="0" aria-label="Рубиновый логотип Project Visuals">
+          <div class="logo-hud" aria-hidden="true">
+            <div class="hud-glow"></div>
+            <div class="hud-ring hud-ring-outer"></div>
+            <div class="hud-ring hud-ring-mid"></div>
+            <div class="hud-ring hud-ring-inner"></div>
+            <div class="hud-reticle"></div>
+          </div>
+          <img class="hero-logo" src="./assets/project-visuals-logo.webp" alt="Рубиновый логотип Project Visuals" width="1280" height="1280" fetchpriority="high">
+        </div>
+        <h1 id="hero-title">Project <span>Visuals</span></h1>
+        <p class="hero-description">Знакомый мир. Совсем другое ощущение.<br>Полноценный лаунчер-клиент для визуального преображения Minecraft · Открытый Beta-тест и Пре-релиз</p>
+        <div class="hero-actions">
+          <a class="button" href="#preview">Почувствовать разницу <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#features">Изучить возможности <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="features" aria-labelledby="features-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Детали меняют всё</p>
+        <h2 id="features-title">Твой Minecraft.<br><span>Только выразительнее.</span></h2>
+        <p>Атмосфера, интерфейс и эффекты.<br>Всё складывается в твой собственный стиль.</p>
+      </div>
+      <div class="feature-grid showcase-grid">
+        <article class="feature-card feature-showcase reveal" tabindex="0" role="button" aria-label="Приблизить Game ESP">
+          <div class="zoom-indicator">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <span>Нажмите для приближения</span>
+          </div>
+          <img class="zoomable" src="./assets/gameEsp.webp" alt="Project Visuals — Game ESP (Кадр в игре)" loading="lazy" width="1920" height="1080">
+        </article>
+        <article class="feature-card feature-showcase reveal" tabindex="0" role="button" aria-label="Приблизить Hand Chams">
+          <div class="zoom-indicator">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <span>Нажмите для приближения</span>
+          </div>
+          <img class="zoomable" src="./assets/hand-chams.webp" alt="Project Visuals — Hand Chams & Шейдеры (Кадр в игре)" loading="lazy" width="1920" height="1080">
+        </article>
+      </div>
+    </section>
+
+    <section class="section preview-section shell" id="preview" aria-labelledby="preview-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Реальный интерфейс клиента</p>
+        <h2 id="preview-title">Стиль в каждом пикселе.<br><span>Рассмотри интерфейс.</span></h2>
+        <p>Объёмная 3D-рулетка модулей Project Visuals.<br>Всё управление графикой, косметикой и эффектами в едином стиле.</p>
+      </div>
+
+      <div class="roulette-wrapper reveal" id="roulette-wrapper">
+        <div class="roulette-ambient-glow" aria-hidden="true"></div>
+        <div class="roulette-topline">
+          <span><i></i> PROJECT VISUALS</span>
+          <span class="roulette-status-badge">3D INTERFACE SHOWCASE</span>
+        </div>
+
+        <div class="roulette-stage" id="roulette-stage">
+          <button type="button" class="roulette-arrow roulette-prev" id="roulette-prev" aria-label="Предыдущий экран">‹</button>
+          
+          <div class="roulette-track" id="roulette-track">
+            <!-- Слайд 0: Меню мода -->
+            <div class="roulette-card is-active" data-index="0" role="button" tabindex="0" aria-label="Меню самого мода — открыть">
+              <div class="roulette-card-glass">
+                <div class="card-tag">01 / МОДУЛИ</div>
+                <div class="card-zoom-btn" title="Приблизить интерфейс" aria-label="Приблизить">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+                <img class="zoomable" src="./assets/gui.webp" alt="Меню самого мода — Project Visuals" loading="lazy" width="1920" height="1080">
+                <div class="card-reflection"></div>
+              </div>
+            </div>
+
+            <!-- Слайд 1: Меню косметики -->
+            <div class="roulette-card is-right" data-index="1" role="button" tabindex="0" aria-label="Меню косметики — открыть">
+              <div class="roulette-card-glass">
+                <div class="card-tag">02 / КОСМЕТИКА</div>
+                <div class="card-zoom-btn" title="Приблизить интерфейс" aria-label="Приблизить">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+                <img class="zoomable" src="./assets/gui2.webp" alt="Меню косметики — Project Visuals" loading="lazy" width="1920" height="1080">
+                <div class="card-reflection"></div>
+              </div>
+            </div>
+
+            <!-- Слайд 2: Каталог шейдерпаков -->
+            <div class="roulette-card is-left" data-index="2" role="button" tabindex="0" aria-label="Каталог шейдерпаков — открыть">
+              <div class="roulette-card-glass">
+                <div class="card-tag">03 / ШЕЙДЕРЫ</div>
+                <div class="card-zoom-btn" title="Приблизить интерфейс" aria-label="Приблизить">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+                <img class="zoomable" src="./assets/gui3.webp" alt="Каталог шейдерпаков — Project Visuals" loading="lazy" width="1920" height="1080">
+                <div class="card-reflection"></div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="roulette-arrow roulette-next" id="roulette-next" aria-label="Следующий экран">›</button>
+        </div>
+
+        <!-- Отдельный чёткий 2D блок описания с реакцией и идеальной резкостью шрифта -->
+        <div class="roulette-caption-box" id="roulette-caption-box">
+          <div class="caption-slide is-active" data-caption="0">
+            <span class="caption-badge">Модуль 01</span>
+            <h3 class="caption-title">Меню самого мода</h3>
+            <p class="caption-desc">Тонкая настройка боевых эффектов: частицы удара, Hit Color, Target ESP, числа урона и звуки</p>
+          </div>
+          <div class="caption-slide" data-caption="1">
+            <span class="caption-badge">Модуль 02</span>
+            <h3 class="caption-title">Меню косметики</h3>
+            <p class="caption-desc">Кастомизация внешности: плащи, объёмные крылья дракона и ангела, скины оружия и аксессуары</p>
+          </div>
+          <div class="caption-slide" data-caption="2">
+            <span class="caption-badge">Модуль 03</span>
+            <h3 class="caption-title">Каталог шейдерпаков</h3>
+            <p class="caption-desc">Встроенный браузер шейдеров: калибровка неба, звёзд, реалистичных отражений воды и освещения</p>
+          </div>
+        </div>
+
+        <div class="roulette-nav-bar">
+          <div class="roulette-dots" role="tablist" aria-label="Выбор экрана интерфейса">
+            <button type="button" class="roulette-dot is-active" data-goto="0" role="tab" aria-selected="true"><span>01</span> Меню мода</button>
+            <button type="button" class="roulette-dot" data-goto="1" role="tab" aria-selected="false"><span>02</span> Меню косметики</button>
+            <button type="button" class="roulette-dot" data-goto="2" role="tab" aria-selected="false"><span>03</span> Каталог шейдерпаков</button>
+          </div>
+          <div class="roulette-hint">
+            <span>↔ Клик по карточке или стрелки для вращения</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Один мир. Два ощущения.</p>
+        <h2 id="experience-title">Разница — перед глазами.</h2>
+        <p>Потяни разделитель и посмотри,<br>как меняется знакомый Minecraft.</p>
+      </div>
+      <div class="comparison reveal" id="comparison" style="--split:50%">
+        <img class="comparison-base" src="./assets/comparison-before.webp" alt="Minecraft без визуального мода" width="1920" height="1080" loading="lazy">
+        <img class="comparison-rich" src="./assets/comparison-after.webp" alt="Тот же пейзаж с Project Visuals" width="1920" height="1080" loading="lazy">
+        <span class="comparison-label label-left">Без мода</span>
+        <span class="comparison-label label-right">Project Visuals</span>
+        <div class="comparison-line" aria-hidden="true"><span>‹ ›</span></div>
+        <input id="comparison-range" type="range" min="0" max="100" value="50" aria-label="Сравнение: без мода слева, с модом справа">
+      </div>
+    </section>
+
+    <section class="section shell launcher-manifest-section" id="about" aria-labelledby="manifest-title">
+      <div class="manifest-card reveal" tabindex="0">
+        <div class="manifest-glow" aria-hidden="true"></div>
+        <div class="manifest-header">
+          <span class="manifest-badge"><span class="badge-pulse"></span> ОТКРЫТЫЙ BETA-TEST & ПРЕ-РЕЛИЗ</span>
+          <span class="manifest-tag">100% EULA COMPLIANT · NO ADVANTAGE</span>
+        </div>
+        <div class="manifest-body">
+          <h2 id="manifest-title">Project Visuals — полноценный лаунчер-клиент,<br><span>а не запрещённый софт.</span></h2>
+          <p class="manifest-lead">
+            Project Visuals разрабатывается как независимый, легальный клиент-лаунчер нового поколения. Мы фокусируемся исключительно на эстетике, оптимизации и визуальном погружении. Клиент не содержит запрещённого кода, читов или боевых преимуществ — вы получаете только чистый, красивый и честный Minecraft.
+          </p>
+          <div class="manifest-grid">
+            <div class="manifest-item">
+              <div class="manifest-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4>Строгое соблюдение EULA и Fair Play</h4>
+                <p>Клиент не вмешивается в физику сервера, хитбоксы, перемещение или дистанцию атаки. Полная безопасность и соответствие Commercial Usage Guidelines Mojang.</p>
+              </div>
+            </div>
+            <div class="manifest-item">
+              <div class="manifest-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+              </div>
+              <div>
+                <h4>Исключительно визуал и эстетика</h4>
+                <p>Кастомизация рук, крылья, скины, шейдеры и приятная индикация попаданий работают локально в вашем клиенте, создавая эстетическое превосходство без нечестного преимущества.</p>
+              </div>
+            </div>
+            <div class="manifest-item">
+              <div class="manifest-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>Фиксация цены на старте</h4>
+                <p>Сейчас идёт этап открытого бета-тестирования. Приобретая клиент по текущей цене, вы получаете постоянный доступ и ко всем будущим обновлениям без доплат.</p>
+              </div>
+            </div>
+          </div>
+          <div class="manifest-footer">
+            <a class="manifest-tg-badge" href="https://t.me/projectvisuals" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Официальный Telegram канал разработчиков: <strong>@projectvisuals</strong></span>
+              <span class="manifest-tg-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Editions Section -->
+    <section class="section shell pricing-section" id="pricing" aria-labelledby="pricing-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Твой выбор версий</p>
+        <h2 id="pricing-title">Выбери свой формат.<br><span>Визуал доступен каждому.</span></h2>
+        <p>Мы ценим каждого игрока: одновременно будет доступна как бесплатная версия, так и расширенный платный доступ с эксклюзивами.</p>
+      </div>
+
+      <!-- Бесплатная версия (Project Visuals Free) -->
+      <article class="free-edition-card reveal" tabindex="0">
+        <div class="free-card-glow" aria-hidden="true"></div>
+        <div class="free-card-header">
+          <div class="free-card-badge">
+            <span class="badge-dot-green"></span>
+            БЕСПЛАТНАЯ ВЕРСИЯ · FREE EDITION
+          </div>
+          <span class="free-status-tag">СКОРО В ДОСТУПЕ</span>
+        </div>
+        <div class="free-card-body">
+          <div class="free-card-main">
+            <span class="price-kicker">БАЗОВЫЙ ПУЛ ДЛЯ КАЖДОГО</span>
+            <h3>Project Visuals Free</h3>
+            <p class="free-lead">
+              Мы принципиально не делаем «огрызок»: бесплатная версия обыгрывает соперников по плавности и стилю прямо из коробки. Здесь базовый пул функций, укороченные настройки модулей и меньше кастомной косметики, но сохранены наша фирменная оптимизация, чистота и эстетичный интерфейс.
+            </p>
+            <p class="free-sublead">
+              Отличный вариант, чтобы комфортно играть без лишних затрат или накопить на платную версию через ежедневные награды на сайте.
+            </p>
+          </div>
+          <div class="free-card-aside">
+            <button class="button button-free-action" id="free-notice-btn" type="button">
+              <span>Скачать бесплатно</span>
+              <small>Открытие в день запуска</small>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Баннер ежедневных наград на сайте -->
+      <aside class="daily-reward-banner reveal" tabindex="0">
+        <div class="daily-topo-bg" aria-hidden="true"></div>
+        <div class="daily-reward-glow" aria-hidden="true"></div>
+        <div class="daily-reward-left">
+          <div class="daily-reward-info">
+            <div class="daily-tag">ХАЛЯВА КАЖДЫЙ ДЕНЬ</div>
+            <h4>Ежедневные награды и бонусы на сайте</h4>
+            <p>Заходи на сайт каждый день, открывай кейс активности и выбивай рубли на баланс, промокоды или подписку на 30 дней без вложений!</p>
+          </div>
+        </div>
+        <button class="button button-small daily-open-btn" id="open-daily-btn" type="button">
+          <span>Смотреть призы</span> <span aria-hidden="true">↗</span>
+        </button>
+      </aside>
+
+      <div class="pricing-grid reveal">
+        <article class="price-card" tabindex="0">
+          <div class="price-art">
+            <img src="./assets/plan-pearl.webp" alt="Объёмный рубиновый жемчуг Эндера" width="1254" height="1254" loading="lazy">
+          </div>
+          <div class="price-copy">
+            <span class="price-kicker">ПЕРВОЕ ЗНАКОМСТВО</span>
+            <h3>30 дней</h3>
+            <p>Месяц в твоём стиле с полным доступом ко всем эффектам.</p>
+            <div class="price-bottom">
+              <strong>50 <span>₽</span></strong>
+              <button class="price-action" data-plan="30 дней" data-cost="50" aria-label="Выбрать 30 дней за 50 рублей">Выбрать <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="price-card best-deal-card" tabindex="0">
+          <span class="best-deal-badge">ВЫГОДНО</span>
+          <div class="price-art">
+            <img src="./assets/plan-diamond.webp" alt="Объёмный рубиновый алмаз Minecraft" width="1254" height="1254" loading="lazy">
+          </div>
+          <div class="price-copy">
+            <span class="price-kicker">ХИТ ВЫБОРА</span>
+            <h3>90 дней</h3>
+            <p>Три месяца новых ощущений с максимальной экономией.</p>
+            <div class="price-bottom">
+              <strong>140 <span>₽</span></strong>
+              <button class="price-action" data-plan="90 дней" data-cost="140" aria-label="Выбрать 90 дней за 140 рублей">Выбрать <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="price-card forever-card" tabindex="0">
+          <div class="price-art">
+            <img src="./assets/plan-totem.webp" alt="Объёмный рубиновый тотем бессмертия Minecraft" width="1280" height="1280" loading="lazy">
+          </div>
+          <div class="price-copy">
+            <span class="price-kicker">БЕЗ ОГРАНИЧЕНИЯ ПО ВРЕМЕНИ</span>
+            <h3>Навсегда</h3>
+            <p>Твой мир. Фиксация цены и доступ ко всем релизам навсегда.</p>
+            <div class="price-bottom">
+              <strong>450 <span>₽</span></strong>
+              <button class="price-action" data-plan="Навсегда" data-cost="450" aria-label="Выбрать навсегда за 450 рублей">Выбрать <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <article class="hwid-banner reveal" tabindex="0">
+        <div class="hwid-art">
+          <img src="./assets/hwidicon.webp" alt="Иконка сброса привязки HWID" width="512" height="512" loading="lazy">
+        </div>
+        <div class="hwid-copy">
+          <span class="price-kicker">НОВОЕ УСТРОЙСТВО. ПРЕЖНИЙ ВИЗУАЛ.</span>
+          <h3>Сброс HWID</h3>
+          <p>Сброс привязки к устройству для нового ПК.</p>
+        </div>
+        <div class="hwid-purchase">
+          <strong>49 <span>₽</span></strong>
+          <button class="price-action" data-plan="Сброс HWID" data-cost="49">Выбрать <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
+    </section>
+
+    <section class="outro" aria-labelledby="outro-title">
+      <div class="outro-glow" aria-hidden="true"></div>
+      <img class="outro-asset outro-left" src="./assets/project-visuals-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <img class="outro-asset outro-right" src="./assets/project-visuals-logo.webp" alt="" aria-hidden="true" loading="lazy">
+      <div class="outro-content reveal">
+        <p class="eyebrow">Project Visuals</p>
+        <h2 id="outro-title">Оставь привычное.<br><span>Измени ощущение.</span></h2>
+        <a class="button" href="#preview">Попробовать клиент <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Модальное окно покупки тарифа -->
+  <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-dialog-title">
+    <form method="dialog">
+      <button class="dialog-close" value="close" type="button" aria-label="Закрыть">×</button>
+      <p class="eyebrow">Project Visuals · Тарифы</p>
+      <h2 id="plan-dialog-title">Тариф</h2>
+      <p class="plan-dialog-cost" id="plan-dialog-cost">0 ₽</p>
+      <div class="dialog-notice">
+        <span class="dialog-notice-icon">ℹ</span>
+        <div>
+          <p><strong>Продажи откроются совсем скоро!</strong></p>
+          <p>Следите за запуском и новостями в Telegram-канале: <a class="dialog-tg-link" href="https://t.me/projectvisuals" target="_blank" rel="noopener">@projectvisuals</a></p>
+        </div>
+      </div>
+      <button class="button dialog-confirm" type="button">Понятно</button>
+    </form>
+  </dialog>
+
+  <!-- Готовое модальное окно авторизации/регистрации для подключения бэкенда -->
+  <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-modal-title">
+    <div class="auth-box">
+      <button class="dialog-close auth-close-btn" type="button" aria-label="Закрыть окно">×</button>
+      <div class="auth-header">
+        <img src="./assets/project-visuals-logo.webp" width="36" height="36" alt="Project Visuals" class="auth-logo">
+        <h2 id="auth-modal-title">Личный кабинет</h2>
+        <p class="auth-subtitle">Управление подписками, привязкой HWID и ежедневными наградами</p>
+      </div>
+
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab is-active" id="tab-btn-login" role="tab" aria-selected="true" aria-controls="auth-form-login">Вход</button>
+        <button type="button" class="auth-tab" id="tab-btn-register" role="tab" aria-selected="false" aria-controls="auth-form-register">Регистрация</button>
+      </div>
+
+      <!-- Форма Входа -->
+      <form class="auth-form is-active" id="auth-form-login" autocomplete="on">
+        <div class="form-group">
+          <label for="login-username">Имя пользователя или Email</label>
+          <input type="text" id="login-username" name="username" placeholder="Minecraft никнейм или почта" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <div class="label-with-link">
+            <label for="login-password">Пароль</label>
+            <a href="#" class="form-helper-link" id="forgot-pass-link">Забыли?</a>
+          </div>
+          <input type="password" id="login-password" name="password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <div class="form-options">
+          <label class="checkbox-label">
+            <input type="checkbox" name="remember" checked>
+            <span>Запомнить меня</span>
+          </label>
+        </div>
+        <button type="submit" class="button auth-submit-btn">Войти в аккаунт</button>
+      </form>
+
+      <!-- Форма Регистрации -->
+      <form class="auth-form" id="auth-form-register" autocomplete="on" hidden>
+        <div class="form-group">
+          <label for="reg-username">Никнейм в Minecraft</label>
+          <input type="text" id="reg-username" name="username" placeholder="Steve" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Электронная почта</label>
+          <input type="email" id="reg-email" name="email" placeholder="example@mail.ru" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Пароль</label>
+          <input type="password" id="reg-password" name="password" placeholder="Минимум 6 символов" required autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="reg-confirm">Повторите пароль</label>
+          <input type="password" id="reg-confirm" name="password_confirm" placeholder="••••••••" required autocomplete="new-password">
+        </div>
+        <button type="submit" class="button auth-submit-btn">Создать аккаунт</button>
+      </form>
+
+      <!-- Быстрый вход через Telegram -->
+      <div class="auth-divider"><span>или через соцсети</span></div>
+      <div class="auth-socials">
+        <a href="https://t.me/projectvisuals" target="_blank" rel="noopener" class="auth-social-btn" title="Войти через Telegram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Telegram Auth</span>
+        </a>
+      </div>
+
+      <div id="auth-alert" class="auth-alert" hidden></div>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно информации о Ежедневных Наградах -->
+  <dialog id="daily-dialog" class="plan-dialog daily-dialog" aria-labelledby="daily-dialog-title">
+    <div class="daily-dialog-content">
+      <button class="dialog-close daily-close-btn" type="button" aria-label="Закрыть">×</button>
+      <div class="daily-dialog-header">
+        <h2 id="daily-dialog-title">Ежедневные награды</h2>
+        <p>Каждые 24 часа заходи на сайт под своим аккаунтом и забирай случайный приз!</p>
+      </div>
+      <div class="daily-rarity-legend">
+        <span class="rarity-legend-item rarity-common"><span class="rarity-dot"></span>Обычный</span>
+        <span class="rarity-legend-item rarity-uncommon"><span class="rarity-dot"></span>Необычный</span>
+        <span class="rarity-legend-item rarity-rare"><span class="rarity-dot"></span>Редкий</span>
+        <span class="rarity-legend-item rarity-legendary"><span class="rarity-dot"></span>Легендарный</span>
+      </div>
+      <div class="daily-prizes-preview">
+        <div class="prize-pill rarity-common"><span class="rarity-dot"></span><span class="prize-text">+1 ₽ на баланс</span></div>
+        <div class="prize-pill rarity-common"><span class="rarity-dot"></span><span class="prize-text">+2 ₽ на баланс</span></div>
+        <div class="prize-pill rarity-uncommon"><span class="rarity-dot"></span><span class="prize-text">+3 ₽ на баланс</span></div>
+        <div class="prize-pill rarity-uncommon"><span class="rarity-dot"></span><span class="prize-text">+5 ₽ на баланс</span></div>
+        <div class="prize-pill rarity-uncommon"><span class="rarity-dot"></span><span class="prize-text">Промокод на скидку</span></div>
+        <div class="prize-pill rarity-rare"><span class="rarity-dot"></span><span class="prize-text">+8 ₽ на баланс</span></div>
+        <div class="prize-pill rarity-rare"><span class="rarity-dot"></span><span class="prize-text">Секретный промокод</span></div>
+        <div class="prize-pill rarity-legendary"><span class="rarity-dot"></span><span class="prize-text">Подписка на 30 дней</span><span class="prize-badge">СУПЕР-ПРИЗ</span></div>
+      </div>
+      <div class="dialog-notice">
+        <span class="dialog-notice-icon">✓</span>
+        <div>
+          <p><strong>Баланс можно копить</strong> и оплачивать им подписку или сброс HWID без траты собственных денег.</p>
+          <p>Система наград стартует одновременно с открытием сайта!</p>
+        </div>
+      </div>
+      <button class="button daily-confirm-btn" type="button">Понятно, жду запуска</button>
+    </div>
+  </dialog>
+
+  <!-- Fullscreen Image Zoom Lightbox -->
+  <div id="image-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр скриншота в полный размер">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Закрыть просмотр (Esc)">✕</button>
+      <div class="lightbox-image-wrap">
+        <img id="lightbox-img" src="" alt="Скриншот в полный размер">
+      </div>
+      <div class="lightbox-meta">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <span class="lightbox-hint">Нажмите в любое место или Esc, чтобы закрыть</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer shell">
+    <a class="brand" href="#home">
+      <img src="./assets/project-visuals-logo.webp" width="32" height="32" alt="">
+      <span>Project<span class="brand-light">Visuals</span></span>
+    </a>
+    <div class="footer-center">
+      <span>Твой мир. Твой визуал.</span>
+      <a class="footer-tg-link" href="https://t.me/projectvisuals" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        <span>@projectvisuals</span>
+      </a>
+    </div>
+    <span class="footer-note">Независимый лаунчер-клиент. Не связан с Mojang или Microsoft. Полная совместимость с EULA.</span>
+  </footer>
+</body>
+</html>
