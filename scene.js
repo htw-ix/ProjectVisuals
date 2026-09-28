@@ -134,25 +134,49 @@
     setRoulette(0);
   }
 
-  // 2. Ironclad Comparison Slider (Instant 1:1, Zero Lag, Zero Jitter)
+  // 2. Silky Smooth Comparison Slider with Inertia & Lerp
   const comparison = document.getElementById('comparison');
   const range = document.getElementById('comparison-range');
   if (comparison && range) {
-    let ticking = false;
-    const updateSplit = () => {
-      comparison.style.setProperty('--split', range.value + '%');
-      ticking = false;
+    let currentSplit = parseFloat(range.value) || 50;
+    let targetSplit = currentSplit;
+    let isRunning = false;
+
+    const lerpSplit = () => {
+      const delta = targetSplit - currentSplit;
+      if (Math.abs(delta) > 0.05) {
+        currentSplit += delta * 0.22; // silky smooth spring lerp
+        comparison.style.setProperty('--split', currentSplit.toFixed(2) + '%');
+        requestAnimationFrame(lerpSplit);
+      } else {
+        currentSplit = targetSplit;
+        comparison.style.setProperty('--split', currentSplit + '%');
+        isRunning = false;
+      }
     };
-    range.addEventListener('input', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateSplit);
-        ticking = true;
+
+    const setTarget = (val) => {
+      targetSplit = Math.max(0, Math.min(100, parseFloat(val)));
+      if (!isRunning) {
+        isRunning = true;
+        requestAnimationFrame(lerpSplit);
+      }
+    };
+
+    range.addEventListener('input', (e) => setTarget(e.target.value));
+    range.addEventListener('change', (e) => setTarget(e.target.value));
+
+    // Direct pointer drag on the comparison stage for effortless interaction
+    comparison.addEventListener('pointermove', (e) => {
+      if (e.buttons === 1) {
+        const rect = comparison.getBoundingClientRect();
+        const percent = ((e.clientX - rect.left) / rect.width) * 100;
+        const clamped = Math.max(0, Math.min(100, percent));
+        range.value = Math.round(clamped);
+        setTarget(clamped);
       }
     });
-    range.addEventListener('change', () => {
-      comparison.style.setProperty('--split', range.value + '%');
-    });
-    // Initial sync
-    comparison.style.setProperty('--split', (range.value || 50) + '%');
+
+    comparison.style.setProperty('--split', currentSplit + '%');
   }
 })();

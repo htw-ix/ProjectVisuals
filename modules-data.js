@@ -10,16 +10,14 @@
     { id: 'camera', label: 'Камера и руки' },
     { id: 'inventory', label: 'Инвентарь и утилиты' },
     { id: 'cosmetics', label: 'Косметика' },
-    { id: 'gui', label: 'Интерфейс и темы' },
-    { id: 'launcher', label: 'Стартовый экран' },
-    { id: 'performance', label: 'Производительность' }
+    { id: 'performance', label: 'Оптимизация' }
   ];
 
   const MODULES_DATA = [
-    // 1. Боевые эффекты
+    // 1. Боевые эффекты (12 модулей)
     {
       id: 'hit-particles',
-      name: 'Hit Particles (Частицы удара)',
+      name: 'Hit Particles',
       category: 'Боевые эффекты',
       catId: 'combat',
       free: 'partial',
@@ -46,7 +44,7 @@
     },
     {
       id: 'target-esp',
-      name: 'Target ESP (Метка цели)',
+      name: 'Target ESP',
       category: 'Боевые эффекты',
       catId: 'combat',
       free: 'partial',
@@ -74,7 +72,7 @@
     },
     {
       id: 'combat-text',
-      name: 'Combat Text (Числа урона)',
+      name: 'Combat Text',
       category: 'Боевые эффекты',
       catId: 'combat',
       free: false,
@@ -145,10 +143,10 @@
       desc: 'Автоматическое возрождение персонажа либо быстрый выход в главное меню после гибели.'
     },
 
-    // 2. Мир и визуальные эффекты
+    // 2. Мир и визуальные эффекты (18 модулей)
     {
       id: 'skybox',
-      name: 'Skybox & Dusk (Скайбокс)',
+      name: 'Skybox & Dusk',
       category: 'Мир и визуал',
       catId: 'world',
       free: 'partial',
@@ -244,16 +242,8 @@
       desc: 'Мягкое свечение вокруг силуэта вашего персонажа.'
     },
     {
-      id: 'tags',
-      name: 'Tags (Метки над игроками)',
-      category: 'Мир и визуал',
-      catId: 'world',
-      free: false,
-      desc: 'Кастомные информационные метки над игроками и сущностями: дистанция, состояние брони, статус и здоровье.'
-    },
-    {
       id: 'player-outline',
-      name: 'Player Outline (Обводка игроков)',
+      name: 'Player Outline',
       category: 'Мир и визуал',
       catId: 'world',
       free: false,
@@ -308,7 +298,7 @@
       desc: 'Отключение ненужных элементов: скорборд, список игроков, огонь на экране, дождь/снег, виньетка, портал, тыква, иконки эффектов и тряска камеры при ударе.'
     },
 
-    // 3. HUD
+    // 3. HUD (16 модулей)
     {
       id: 'target-hud',
       name: 'Target HUD',
@@ -438,7 +428,7 @@
       desc: 'Интерактивное перемещение, масштабирование и скрытие виджетов мышью при открытом чате.'
     },
 
-    // 4. Камера, руки и управление
+    // 4. Камера, руки и управление (8 модулей)
     {
       id: 'viewmodel',
       name: 'Viewmodel',
@@ -457,7 +447,7 @@
     },
     {
       id: 'hand-flames',
-      name: 'Hand Flames (Пламя рук)',
+      name: 'Hand Flames',
       category: 'Камера и руки',
       catId: 'camera',
       free: false,
@@ -504,7 +494,7 @@
       desc: 'Назначение модулей на клавиатуру и кнопки мыши (включая боковые); режимы удержания и переключения.'
     },
 
-    // 5. Инвентарь и утилиты
+    // 5. Инвентарь и утилиты (12 модулей)
     {
       id: 'shulker-preview',
       name: 'Shulker Preview',
@@ -539,7 +529,7 @@
     },
     {
       id: 'chest-loot',
-      name: 'Chest Loot (Забирать из сундука)',
+      name: 'Chest Loot',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
@@ -547,7 +537,7 @@
     },
     {
       id: 'item-logger',
-      name: 'ItemLogger (Айтем логгер)',
+      name: 'ItemLogger',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
@@ -567,7 +557,7 @@
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: true,
-      desc: 'Создание путевых точек по взгляду или координатам с отображением в игровом мире.'
+      desc: 'Создание путевых меток по взгляду или координатам с отображением в игровом мире.'
     },
     {
       id: 'name-protect',
@@ -579,7 +569,7 @@
     },
     {
       id: 'command-macros',
-      name: 'Command Macros (Макросы команд)',
+      name: 'Command Macros',
       category: 'Инвентарь и утилиты',
       catId: 'inventory',
       free: false,
@@ -602,7 +592,7 @@
       desc: 'Сохранение истории отправленных сообщений между перезапусками клиента.'
     },
 
-    // 6. Косметика
+    // 6. Косметика (6 модулей)
     {
       id: 'cosmetics-catalog',
       name: 'Каталог косметики',
@@ -652,162 +642,15 @@
       desc: 'Одновременное комбинирование плащей, крыльев и головных уборов без визуальных конфликтов.'
     },
 
-    // 7. Интерфейс, темы и профили
-    {
-      id: 'themes',
-      name: 'Темы GUI',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Фирменные темы интерфейса: Liquid (глянцевое стекло) и Matte (глубокий матовый минимализм).'
-    },
-    {
-      id: 'module-search',
-      name: 'Умный поиск по модулям',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Быстрый поиск функций по русским и английским названиям, описанию и синонимам.'
-    },
-    {
-      id: 'structure-customization',
-      name: 'Кастомизация структуры',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Свободная перестановка модулей и категорий, регулировка разделителей колонок и масштаба интерфейса.'
-    },
-    {
-      id: 'color-palette',
-      name: 'Палитра цветов',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Полнофункциональная цветовая палитра с HEX-кодами, пипеткой и сохранением избранных оттенков.'
-    },
-    {
-      id: 'gradients-styles',
-      name: 'Градиенты и стили',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Пресеты градиентов: Silk, Aurora, Tide, Breathe, Petrol, Light Bands, Opal, Liquid Glass, Mercury.'
-    },
-    {
-      id: 'localization',
-      name: 'Локализация',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Полный профессиональный перевод интерфейса и настроек на русский и английский языки.'
-    },
-    {
-      id: 'ui-sounds',
-      name: 'Звуки интерфейса',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Приятные звуковые отклики на клики, ползунки и переключатели с поддержкой своих audio-файлов.'
-    },
-    {
-      id: 'profiles',
-      name: 'Профили настроек',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Сохранение, экспорт и импорт неограниченного числа конфигов (для PvP, выживания, мини-игр).'
-    },
-    {
-      id: 'f1-visibility',
-      name: 'F1 Visibility',
-      category: 'Интерфейс и темы',
-      catId: 'gui',
-      free: true,
-      desc: 'Тонкая настройка видимости элементов мода при включении режима F1.'
-    },
-
-    // 8. Стартовый экран и интеграции
-    {
-      id: 'start-screen',
-      name: 'Стартовый экран',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Кастомное главное меню игры с живыми обоями, часами, панелью серверов и плавными анимациями.'
-    },
-    {
-      id: 'wallpaper-editor',
-      name: 'Редактор обоев',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Импорт собственных обоев PNG/JPG, матовый блюр, регулировка затемнения и стили часов SF Pro.'
-    },
-    {
-      id: 'window-customization',
-      name: 'Кастомизация окна',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Фирменный заголовок окна и логотип Project Visuals вместо стандартной иконки Java.'
-    },
-    {
-      id: 'alt-accounts',
-      name: 'Менеджер аккаунтов (Alts)',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Быстрое переключение между лицензионными и офлайн-аккаунтами без перезапуска игры.'
-    },
-    {
-      id: 'viafabricplus',
-      name: 'ViaFabricPlus',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Прямое подключение к серверам любых версий Minecraft от 1.8 до самых новых.'
-    },
-    {
-      id: 'shaders-catalog',
-      name: 'Каталог шейдеров',
-      category: 'Стартовый экран',
-      catId: 'launcher',
-      free: true,
-      desc: 'Удобная загрузка и переключение шейдерпаков Iris с настройкой профилей качества.'
-    },
-
-    // 9. Производительность
+    // 7. Производительность (1 модуль)
     {
       id: 'optimization',
-      name: 'Optimization (Оптимизация)',
-      category: 'Производительность',
+      name: 'Optimization',
+      category: 'Оптимизация',
       catId: 'performance',
       free: 'partial',
-      desc: 'Глубокая оптимизация работы самого Minecraft: отсечение невидимой геометрии и сущностей, умный менеджмент частиц, регулировка дальности прорисовки и графических нагрузок. В бесплатной версии доступна базовая оптимизация, а в платной Pro версии модуль работает на 25% эффективнее за счёт расширенных эвристик рендеринга и агрессивного отсечения.',
-      options: [
-        { name: 'Базовая оптимизация Minecraft', free: true },
-        { name: 'Отсечение скрытых сущностей', free: true },
-        { name: 'Регулировка частиц и теней', free: true },
-        { name: 'Управление дальностью и облаками', free: true },
-        { name: 'Продвинутый буст (+25% эффективности)', free: false },
-        { name: 'Глубокое агрессивное отсечение кадра', free: false }
-      ]
-    },
-    {
-      id: 'fps-reduce',
-      name: 'FPS Reduce',
-      category: 'Производительность',
-      catId: 'performance',
-      free: true,
-      desc: 'Снижение нагрузки на видеокарту и процессор при свёрнутом окне или AFK.'
-    },
-    {
-      id: 'cache-calc',
-      name: 'Кэширование расчётов',
-      category: 'Производительность',
-      catId: 'performance',
-      free: true,
-      desc: 'Оптимизация математических вычислений визуальных эффектов и анимаций.'
+      desc: 'Комплексная оптимизация работы Minecraft: умный менеджмент частиц, регулировка дальности прорисовки, адаптивное распределение графической нагрузки и отсечение невидимой геометрии. В бесплатной версии оптимизация чуть проще базового уровня, а в платной Pro версии она доведена до максимума для самого высокого и стабильного FPS.',
+      notice: '~ В бесплатной версии оптимизация чуть проще, в платной — максимальная'
     }
   ];
 
@@ -981,13 +824,13 @@
         iconClass = 'free-partial';
         iconSymbol = '~';
         editionText = 'Базовый в Free';
-        noticeText = '~ Базовый пул доступен в Free, расширенный функционал — в Pro';
+        noticeText = module.notice || '~ Базовый пул доступен в Free, расширенный функционал — в Pro';
         noticeClass = 'notice-partial';
       } else if (module.free === false) {
         iconClass = 'free-no';
         iconSymbol = '✕';
         editionText = 'Только Pro';
-        noticeText = '✕ Отсутствует в Free версии (доступно только по подписке)';
+        noticeText = module.notice || '✕ Отсутствует в Free версии (доступно только по подписке)';
         noticeClass = 'notice-cross';
       }
 
